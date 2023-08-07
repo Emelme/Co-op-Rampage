@@ -5,22 +5,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-	private GameManager gameManager;
-
 	private Rigidbody2D rb;
 
+	public ParticleSystem runParticle;
+
 	public float moveSpeed = 8f;
-
-	public float maxSpeed;
-
-	public float moveInputX;
-	public float moveInputY;
-
-	public float targetSpeedX;
-	public float targetSpeedY;
-
-	public float speedDifX;
-	public float speedDifY;
 
 	public float acceleration = 24f;
 	public float decceleration = 32f;
@@ -28,36 +17,24 @@ public class PlayerMovement : MonoBehaviour
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		gameManager = FindObjectOfType<GameManager>();
-	}
-
-	private void Update()
-	{
-		moveInputX = Input.GetAxisRaw("Horizontal");
-		moveInputY = Input.GetAxisRaw("Vertical");
-
-		if (Input.GetKeyDown(KeyCode.R))
-		{
-			gameManager.RestartLevel();
-		}
 	}
 
 	private void FixedUpdate()
 	{
-		targetSpeedX = moveInputX * moveSpeed;
-		targetSpeedY = moveInputY * moveSpeed;
+		float moveInputX = Input.GetAxisRaw("Horizontal");
+		float moveInputY = Input.GetAxisRaw("Vertical");
 
-		speedDifX = targetSpeedX - rb.velocity.x;
-		speedDifY = targetSpeedY - rb.velocity.y;
+		Vector2 movementInput = new Vector2(moveInputX, moveInputY).normalized;
 
-		float accelRateX = (Mathf.Abs(targetSpeedX) > 0.01f) ? acceleration : decceleration;
-		float accelRateY = (Mathf.Abs(targetSpeedY) > 0.01f) ? acceleration : decceleration;
+		Vector2 currentVelocity = rb.velocity;
+		Vector2 targetVelocity = movementInput * moveSpeed;
 
-		float movementX = Mathf.Abs(speedDifX) * accelRateX * Mathf.Sign(speedDifX);
-		float movementY = Mathf.Abs(speedDifY) * accelRateY * Mathf.Sign(speedDifY);
+		Vector2 velocityDiff = targetVelocity - currentVelocity;
 
-		Vector2 velocityChange = new Vector2(movementX, movementY);
+		float accelRate = (movementInput.magnitude > 0.01f) ? acceleration : decceleration;
 
-		rb.AddForce(velocityChange);
+		Vector2 force = velocityDiff * accelRate;
+
+		rb.AddForce(force);
 	}
 }
