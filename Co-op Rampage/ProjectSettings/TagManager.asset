@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Wall
   - Void
+  - Potion
   layers:
   - Default
   - TransparentFX

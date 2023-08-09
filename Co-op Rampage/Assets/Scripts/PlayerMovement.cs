@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+	public PlayerData pd;
+
 	private Rigidbody2D rb;
-
-	public ParticleSystem runParticle;
-
-	public float moveSpeed = 8f;
 
 	public float acceleration = 24f;
 	public float decceleration = 32f;
@@ -25,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
 		float moveInputY = Input.GetAxisRaw("Vertical");
 
 		Vector2 movementInput = new Vector2(moveInputX, moveInputY).normalized;
+
+		float moveSpeed = pd.speed;
 
 		Vector2 currentVelocity = rb.velocity;
 		Vector2 targetVelocity = movementInput * moveSpeed;
