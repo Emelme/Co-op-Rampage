@@ -8,6 +8,9 @@ TagManager:
   - Wall
   - Void
   - Potion
+  - Weapon
+  - Slot 1
+  - Slot 2
   layers:
   - Default
   - TransparentFX

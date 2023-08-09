@@ -9,8 +9,6 @@ public class PlayerData : ScriptableObject
 
 	public CharacterType character;
 
-	public GameObject isHolding;
-
 	public int money = 0;
 
 	public int maxInventorySlots = 2;
