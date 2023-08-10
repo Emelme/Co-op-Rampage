@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
 	public PlayerData pd;
 
 	public int activeWeaponSlot = 0;
+	public int activeItemSlot = 0;
 
 	public List<WeaponData> weaponInventory = new();
 	public List<ItemData> itemInventory = new();
@@ -16,6 +17,7 @@ public class Inventory : MonoBehaviour
 		for (int i = 0; i < pd.maxInventorySlots; i++)
 		{
 			weaponInventory.Insert(i, null);
+			itemInventory.Insert(i, null);
 		}
 	}
 
@@ -25,17 +27,22 @@ public class Inventory : MonoBehaviour
 		{
 			ChangeActiveWeaponSlot();
 		}
+
+		if (Input.GetButtonDown("Change Active Item Slot"))
+		{
+			ChangeActiveItemSlot();
+		}
 	}
 
-	public void AddWeapon(WeaponData wd)
+	public void AddItem(WeaponData wd)
 	{
 		if (weaponInventory[activeWeaponSlot] == null)
 		{
-			AddWeaponAt(activeWeaponSlot, wd);
+			AddItemAt(activeWeaponSlot, wd);
 		}
 		else if (IsInventoryFull(weaponInventory))
 		{
-			AddWeaponAt(activeWeaponSlot, wd);
+			AddItemAt(activeWeaponSlot, wd);
 		}
 		else
 		{
@@ -43,18 +50,41 @@ public class Inventory : MonoBehaviour
 			{
 				if (weaponInventory[i] == null)
 				{
-					AddWeaponAt(i, wd);
+					AddItemAt(i, wd);
 					break;
 				}
 			}
 		}
 	}
 
-	public void AddWeaponAt(int slot, WeaponData wd)
+	public void AddItem(ItemData id)
+	{
+		if (itemInventory[activeItemSlot] == null)
+		{
+			AddItemAt(activeItemSlot, id);
+		}
+		else if (IsInventoryFull(itemInventory))
+		{
+			AddItemAt(activeItemSlot, id);
+		}
+		else
+		{
+			for (int i = 0; i < pd.maxInventorySlots; i++)
+			{
+				if (itemInventory[i] == null)
+				{
+					AddItemAt(i, id);
+					break;
+				}
+			}
+		}
+	}
+
+	public void AddItemAt(int slot, WeaponData wd)
 	{
 		if (weaponInventory[slot] != null)
 		{
-			Drop(slot);
+			Drop(slot, weaponInventory);
 
 			weaponInventory[slot] = wd;
 		}
@@ -64,9 +94,28 @@ public class Inventory : MonoBehaviour
 		}
 	}
 
-	public void Drop(int slot)
+	public void AddItemAt(int slot, ItemData id)
 	{
-		weaponInventory[slot] = null;
+		if (itemInventory[slot] != null)
+		{
+			Drop(slot, itemInventory);
+
+			itemInventory[slot] = id;
+		}
+		else
+		{
+			itemInventory[slot] = id;
+		}
+	}
+
+	public void Drop(int slot, List<WeaponData> list)
+	{
+		list[slot] = null;
+	}
+
+	public void Drop(int slot, List<ItemData> list)
+	{
+		list[slot] = null;
 	}
 
 	public bool IsInventoryFull(List<WeaponData> list)
@@ -111,11 +160,11 @@ public class Inventory : MonoBehaviour
 
 	public void ChangeActiveWeaponSlot()
 	{
-		activeWeaponSlot += 1;
+		activeWeaponSlot = (activeWeaponSlot + 1) % pd.maxInventorySlots;
+	}
 
-		if (activeWeaponSlot == pd.maxInventorySlots)
-		{
-			activeWeaponSlot = 0;
-		}
+	public void ChangeActiveItemSlot()
+	{
+		activeItemSlot = (activeItemSlot + 1) % pd.maxInventorySlots;
 	}
 }

@@ -31,9 +31,15 @@ public class TriggersBehaviour : MonoBehaviour
 	{
 		if(collision.CompareTag("Weapon") && Input.GetButtonDown("Ok"))
 		{
-			iv.AddWeapon(collision.GetComponent<Weapon>().wd);
+			iv.AddItem(collision.GetComponent<Weapon>().wd);
 			Destroy(collision.gameObject);
 		}
+
+		//if (collision.CompareTag("Item") && Input.GetButtonDown("Ok"))
+		//{
+		//	iv.AddItem(collision.GetComponent<Item>().id);
+		//	Destroy(collision.gameObject);
+		//}
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)
