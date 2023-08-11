@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public class Armor : MonoBehaviour
 {
-	public ItemData id;
+	public ArmorData ad;
 
 	private SpriteRenderer sr;
 
 	private void Start()
 	{
 		sr = GetComponent<SpriteRenderer>();
-		sr.sprite = id.sprite;
+		sr.sprite = ad.sprite;
 	}
 }

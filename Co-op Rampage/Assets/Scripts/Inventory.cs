@@ -11,6 +11,8 @@ public class Inventory : MonoBehaviour
 
 	public List<WeaponData> weaponInventory = new();
 	public List<ItemData> itemInventory = new();
+	public ArmorData armorInventory;
+
 
 	private void Start()
 	{
@@ -18,6 +20,7 @@ public class Inventory : MonoBehaviour
 		{
 			weaponInventory.Insert(i, null);
 			itemInventory.Insert(i, null);
+			armorInventory = null;
 		}
 	}
 
@@ -80,6 +83,20 @@ public class Inventory : MonoBehaviour
 		}
 	}
 
+	public void AddItem(ArmorData ad)
+	{
+		if (IsInventoryFull(armorInventory))
+		{
+			Drop(armorInventory);
+
+			armorInventory = ad;
+		}
+		else
+		{
+			armorInventory = ad;
+		}
+	}
+
 	public void AddItemAt(int slot, WeaponData wd)
 	{
 		if (weaponInventory[slot] != null)
@@ -116,6 +133,11 @@ public class Inventory : MonoBehaviour
 	public void Drop(int slot, List<ItemData> list)
 	{
 		list[slot] = null;
+	}
+
+	public void Drop(ArmorData aI)
+	{
+		aI = null;
 	}
 
 	public bool IsInventoryFull(List<WeaponData> list)
@@ -156,6 +178,11 @@ public class Inventory : MonoBehaviour
 
 			return fullSlots >= pd.maxInventorySlots;
 		}
+	}
+
+	public bool IsInventoryFull(ArmorData aI)
+	{
+		return aI != null;
 	}
 
 	public void ChangeActiveWeaponSlot()

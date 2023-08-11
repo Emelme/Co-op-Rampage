@@ -27,6 +27,13 @@ public class InventoryDisplay : MonoBehaviour
 	private Image im1I;
 	private Image im2I;
 
+	public GameObject slotA;
+	private Animator anA;
+	public GameObject imageSlotA;
+	private Image imA;
+	public GameObject armorLogo;
+	private Animator anAL;
+
 	private void Start()
 	{
 		iv = FindObjectOfType<Inventory>().GetComponent<Inventory>();
@@ -48,6 +55,10 @@ public class InventoryDisplay : MonoBehaviour
 
 		imageSlot1I.SetActive(false);
 		imageSlot2I.SetActive(false);
+
+		anA = slotA.GetComponent<Animator>();
+		imA = imageSlotA.GetComponent<Image>();
+		anAL = armorLogo.GetComponent<Animator>();
 	}
 
 	private void Update()
@@ -55,53 +66,71 @@ public class InventoryDisplay : MonoBehaviour
 		an1W.SetInteger("Active Slot", iv.activeWeaponSlot);
 		an2W.SetInteger("Active Slot", iv.activeWeaponSlot);
 
-		if (iv.weaponInventory.Count > 0)
+		if (iv.weaponInventory[0] != null)
 		{
-			if (iv.weaponInventory[0] != null)
-			{
-				imageSlot1W.SetActive(true);
-				im1W.sprite = iv.weaponInventory[0].sprite;
-			}
-			else
-			{
-				imageSlot1W.SetActive(false);
-			}
-
-			if (iv.weaponInventory[1] != null)
-			{
-				imageSlot2W.SetActive(true);
-				im2W.sprite = iv.weaponInventory[1].sprite;
-			}
-			else
-			{
-				imageSlot2W.SetActive(false);
-			} 
+			imageSlot1W.SetActive(true);
+			im1W.sprite = iv.weaponInventory[0].sprite;
 		}
+		else
+		{
+			imageSlot1W.SetActive(false);
+		}
+
+		if (iv.weaponInventory[1] != null)
+		{
+			imageSlot2W.SetActive(true);
+			im2W.sprite = iv.weaponInventory[1].sprite;
+		}
+		else
+		{
+			imageSlot2W.SetActive(false);
+		} 
 
 		an1I.SetInteger("Active Slot Item", iv.activeItemSlot);
 		an2I.SetInteger("Active Slot Item", iv.activeItemSlot);
 
-		if (iv.itemInventory.Count > 0)
+		if (iv.itemInventory[0] != null)
 		{
-			if (iv.itemInventory[0] != null)
-			{
-				imageSlot1I.SetActive(true);
-				im1I.sprite = iv.itemInventory[0].sprite;
-			}
-			else
-			{
-				imageSlot1I.SetActive(false);
-			}
+			imageSlot1I.SetActive(true);
+			im1I.sprite = iv.itemInventory[0].sprite;
+		}
+		else
+		{
+			imageSlot1I.SetActive(false);
+		}
 
-			if (iv.itemInventory[1] != null)
-			{
-				imageSlot2I.SetActive(true);
-				im2I.sprite = iv.itemInventory[1].sprite;
-			}
-			else
-			{
-				imageSlot2I.SetActive(false);
-			}
+		if (iv.itemInventory[1] != null)
+		{
+			imageSlot2I.SetActive(true);
+			im2I.sprite = iv.itemInventory[1].sprite;
+		}
+		else
+		{
+			imageSlot2I.SetActive(false);
+		}
+
+		anA.SetBool("IsArmorSlotFull", iv.IsInventoryFull(iv.armorInventory));
+		anAL.SetBool("IsArmorSlotFull", iv.IsInventoryFull(iv.armorInventory));
+
+		if (iv.itemInventory[0] != null)
+		{
+			imageSlot1I.SetActive(true);
+			im1I.sprite = iv.itemInventory[0].sprite;
+		}
+		else
+		{
+			imageSlot1I.SetActive(false);
+		}
+
+		if (iv.IsInventoryFull(iv.armorInventory))
+		{
+			imageSlotA.SetActive(true);
+			imA.sprite = iv.armorInventory.sprite;
+			armorLogo.SetActive(false);
+		}
+		else
+		{
+			imageSlotA.SetActive(false);
 		}
 	}
 }

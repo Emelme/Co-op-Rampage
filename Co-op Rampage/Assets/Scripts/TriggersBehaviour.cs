@@ -35,11 +35,17 @@ public class TriggersBehaviour : MonoBehaviour
 			Destroy(collision.gameObject);
 		}
 
-		//if (collision.CompareTag("Item") && Input.GetButtonDown("Ok"))
-		//{
-		//	iv.AddItem(collision.GetComponent<Item>().id);
-		//	Destroy(collision.gameObject);
-		//}
+		if (collision.CompareTag("Item") && Input.GetButtonDown("Ok"))
+		{
+			iv.AddItem(collision.GetComponent<Item>().id);
+			Destroy(collision.gameObject);
+		}
+
+		if (collision.CompareTag("Armor") && Input.GetButtonDown("Ok"))
+		{
+			iv.AddItem(collision.GetComponent<Armor>().ad);
+			Destroy(collision.gameObject);
+		}
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)

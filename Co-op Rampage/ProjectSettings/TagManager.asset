@@ -11,6 +11,8 @@ TagManager:
   - Weapon
   - Slot 1
   - Slot 2
+  - Item
+  - Armor
   layers:
   - Default
   - TransparentFX
