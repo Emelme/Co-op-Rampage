@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,6 @@ public class Inventory : MonoBehaviour
 	public List<WeaponData> weaponInventory = new();
 	public List<ItemData> itemInventory = new();
 	public ArmorData armorInventory;
-
 
 	private void Start()
 	{
@@ -34,6 +34,11 @@ public class Inventory : MonoBehaviour
 		if (Input.GetButtonDown("Change Active Item Slot"))
 		{
 			ChangeActiveItemSlot();
+		}
+
+		if (Input.GetKeyDown(KeyCode.Backspace))
+		{
+			Swap(weaponInventory, 0, 1);
 		}
 	}
 
@@ -138,6 +143,13 @@ public class Inventory : MonoBehaviour
 	public void Drop(ArmorData aI)
 	{
 		aI = null;
+	}
+
+	public void Swap<T>(List<T> list, int slot1, int slot2)
+	{
+		T temp = list[slot1];
+		list[slot1] = list[slot2];
+		list[slot2] = temp;
 	}
 
 	public bool IsInventoryFull(List<WeaponData> list)

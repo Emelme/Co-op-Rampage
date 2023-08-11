@@ -134,9 +134,10 @@ GameObject:
   - component: {fileID: 52347492}
   - component: {fileID: 52347494}
   - component: {fileID: 52347493}
+  - component: {fileID: 52347495}
   m_Layer: 5
   m_Name: Weapon Sprite 2
-  m_TagString: Untagged
+  m_TagString: Slot2Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,6 +199,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52347491}
   m_CullTransparentMesh: 1
+--- !u!114 &52347495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52347491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e429aff0e8fa34f81b26888be30b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0}
+  parentAfterDrag: {fileID: 0}
 --- !u!1 &145450355
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +227,7 @@ GameObject:
   - component: {fileID: 145450359}
   m_Layer: 5
   m_Name: Background 2
-  m_TagString: Untagged
+  m_TagString: Slot2Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -453,7 +468,7 @@ GameObject:
   - component: {fileID: 245893698}
   - component: {fileID: 245893697}
   m_Layer: 0
-  m_Name: Metal Sword (1)
+  m_Name: w1
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -837,9 +852,10 @@ GameObject:
   - component: {fileID: 420100651}
   - component: {fileID: 420100650}
   - component: {fileID: 420100652}
+  - component: {fileID: 420100653}
   m_Layer: 5
   m_Name: Background 1
-  m_TagString: Untagged
+  m_TagString: Slot1Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -923,6 +939,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!225 &420100653
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420100648}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &579862205
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,9 +962,10 @@ GameObject:
   - component: {fileID: 579862206}
   - component: {fileID: 579862208}
   - component: {fileID: 579862207}
+  - component: {fileID: 579862209}
   m_Layer: 5
   m_Name: Item Sprite 2
-  m_TagString: Untagged
+  m_TagString: Slot2Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -998,6 +1027,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579862205}
   m_CullTransparentMesh: 1
+--- !u!114 &579862209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579862205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e429aff0e8fa34f81b26888be30b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0}
+  parentAfterDrag: {fileID: 0}
 --- !u!1 &584832178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,6 +1053,7 @@ GameObject:
   - component: {fileID: 584832181}
   - component: {fileID: 584832180}
   - component: {fileID: 584832179}
+  - component: {fileID: 584832183}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1101,6 +1145,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &584832183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584832178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ea8faeea90cc5419206bda18ad237e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot1W: {fileID: 420100648}
+  slot2W: {fileID: 145450355}
+  imageSlot1W: {fileID: 657109327}
+  imageSlot2W: {fileID: 52347491}
+  slot1I: {fileID: 1951182594}
+  slot2I: {fileID: 343971315}
+  imageSlot1I: {fileID: 1092677361}
+  imageSlot2I: {fileID: 579862205}
+  slotA: {fileID: 307769708}
+  imageSlotA: {fileID: 1912140936}
+  armorLogo: {fileID: 1201810415}
 --- !u!1 &657109327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,9 +1179,10 @@ GameObject:
   - component: {fileID: 657109328}
   - component: {fileID: 657109330}
   - component: {fileID: 657109329}
+  - component: {fileID: 657109331}
   m_Layer: 5
   m_Name: Weapon Sprite 1
-  m_TagString: Untagged
+  m_TagString: Slot1Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1176,6 +1244,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657109327}
   m_CullTransparentMesh: 1
+--- !u!114 &657109331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657109327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e429aff0e8fa34f81b26888be30b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0}
+  parentAfterDrag: {fileID: 0}
 --- !u!1 &703319328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,7 +2445,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 957901533}
-  - component: {fileID: 957901534}
   m_Layer: 5
   m_Name: UI Weapon Inventory
   m_TagString: Untagged
@@ -2392,29 +2473,6 @@ RectTransform:
   m_AnchoredPosition: {x: -960, y: 540}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &957901534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957901532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39ea8faeea90cc5419206bda18ad237e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slot1W: {fileID: 420100648}
-  slot2W: {fileID: 145450355}
-  imageSlot1W: {fileID: 657109327}
-  imageSlot2W: {fileID: 52347491}
-  slot1I: {fileID: 1951182594}
-  slot2I: {fileID: 343971315}
-  imageSlot1I: {fileID: 1092677361}
-  imageSlot2I: {fileID: 579862205}
-  slotA: {fileID: 307769708}
-  imageSlotA: {fileID: 1912140936}
-  armorLogo: {fileID: 1201810415}
 --- !u!1 &991443489
 GameObject:
   m_ObjectHideFlags: 0
@@ -3986,9 +4044,10 @@ GameObject:
   - component: {fileID: 1092677362}
   - component: {fileID: 1092677364}
   - component: {fileID: 1092677363}
+  - component: {fileID: 1092677365}
   m_Layer: 5
   m_Name: Item Sprite 1
-  m_TagString: Untagged
+  m_TagString: Slot1Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4050,6 +4109,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092677361}
   m_CullTransparentMesh: 1
+--- !u!114 &1092677365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092677361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e429aff0e8fa34f81b26888be30b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0}
+  parentAfterDrag: {fileID: 0}
 --- !u!1 &1186574984
 GameObject:
   m_ObjectHideFlags: 0
@@ -4207,7 +4280,7 @@ GameObject:
   - component: {fileID: 1245101360}
   - component: {fileID: 1245101359}
   m_Layer: 0
-  m_Name: Metal Sword (3)
+  m_Name: w3
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5370,7 +5443,7 @@ GameObject:
   - component: {fileID: 1597150498}
   - component: {fileID: 1597150497}
   m_Layer: 0
-  m_Name: Metal Sword (2)
+  m_Name: w2
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5512,9 +5585,10 @@ GameObject:
   - component: {fileID: 1912140937}
   - component: {fileID: 1912140939}
   - component: {fileID: 1912140938}
+  - component: {fileID: 1912140940}
   m_Layer: 5
   m_Name: Armor Sprite
-  m_TagString: Untagged
+  m_TagString: SlotArmor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5576,6 +5650,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912140936}
   m_CullTransparentMesh: 1
+--- !u!114 &1912140940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912140936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e429aff0e8fa34f81b26888be30b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0}
+  parentAfterDrag: {fileID: 0}
 --- !u!1 &1926381433
 GameObject:
   m_ObjectHideFlags: 0
@@ -5899,7 +5987,7 @@ GameObject:
   - component: {fileID: 2099139338}
   - component: {fileID: 2099139341}
   m_Layer: 0
-  m_Name: Metal Sword
+  m_Name: w
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

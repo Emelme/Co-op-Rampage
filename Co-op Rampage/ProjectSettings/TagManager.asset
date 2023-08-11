@@ -9,10 +9,13 @@ TagManager:
   - Void
   - Potion
   - Weapon
-  - Slot 1
-  - Slot 2
   - Item
   - Armor
+  - Slot1Weapon
+  - Slot2Weapon
+  - Slot1Item
+  - Slot2Item
+  - SlotArmor
   layers:
   - Default
   - TransparentFX

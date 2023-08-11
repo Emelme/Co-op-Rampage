@@ -44,8 +44,8 @@ public class InventoryDisplay : MonoBehaviour
 		im1W = imageSlot1W.GetComponent<Image>();
 		im2W = imageSlot2W.GetComponent<Image>();
 
-		imageSlot1W.SetActive(false);
-		imageSlot2W.SetActive(false);
+		im1W.enabled = false;
+		im2W.enabled = false;
 
 		an1I = slot1I.GetComponent<Animator>();
 		an2I = slot2I.GetComponent<Animator>();
@@ -53,8 +53,8 @@ public class InventoryDisplay : MonoBehaviour
 		im1I = imageSlot1I.GetComponent<Image>();
 		im2I = imageSlot2I.GetComponent<Image>();
 
-		imageSlot1I.SetActive(false);
-		imageSlot2I.SetActive(false);
+		im1I.enabled = false;
+		im2I.enabled = false;
 
 		anA = slotA.GetComponent<Animator>();
 		imA = imageSlotA.GetComponent<Image>();
@@ -68,22 +68,22 @@ public class InventoryDisplay : MonoBehaviour
 
 		if (iv.weaponInventory[0] != null)
 		{
-			imageSlot1W.SetActive(true);
+			im1W.enabled = true;
 			im1W.sprite = iv.weaponInventory[0].sprite;
 		}
 		else
 		{
-			imageSlot1W.SetActive(false);
+			im1W.enabled = false;
 		}
 
 		if (iv.weaponInventory[1] != null)
 		{
-			imageSlot2W.SetActive(true);
+			im2W.enabled = true;
 			im2W.sprite = iv.weaponInventory[1].sprite;
 		}
 		else
 		{
-			imageSlot2W.SetActive(false);
+			im2W.enabled = false;
 		} 
 
 		an1I.SetInteger("Active Slot Item", iv.activeItemSlot);
@@ -91,36 +91,26 @@ public class InventoryDisplay : MonoBehaviour
 
 		if (iv.itemInventory[0] != null)
 		{
-			imageSlot1I.SetActive(true);
+			im1I.enabled = true;
 			im1I.sprite = iv.itemInventory[0].sprite;
 		}
 		else
 		{
-			imageSlot1I.SetActive(false);
+			im1I.enabled = false;
 		}
 
 		if (iv.itemInventory[1] != null)
 		{
-			imageSlot2I.SetActive(true);
+			im2I.enabled = true;
 			im2I.sprite = iv.itemInventory[1].sprite;
 		}
 		else
 		{
-			imageSlot2I.SetActive(false);
+			im2I.enabled = false;
 		}
 
 		anA.SetBool("IsArmorSlotFull", iv.IsInventoryFull(iv.armorInventory));
 		anAL.SetBool("IsArmorSlotFull", iv.IsInventoryFull(iv.armorInventory));
-
-		if (iv.itemInventory[0] != null)
-		{
-			imageSlot1I.SetActive(true);
-			im1I.sprite = iv.itemInventory[0].sprite;
-		}
-		else
-		{
-			imageSlot1I.SetActive(false);
-		}
 
 		if (iv.IsInventoryFull(iv.armorInventory))
 		{
