@@ -9,4 +9,14 @@ public class WeaponData : ScriptableObject
 	public new string name;
 
 	public Sprite sprite;
+
+	public int damage;
+
+	public float useTime;
+
+	public int critChance;
+
+	public int critDamage;
+
+	public int knockdown;
 }
