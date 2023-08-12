@@ -7,6 +7,8 @@ public class PlayerAnimations: MonoBehaviour
 	private Animator an;
 	private Rigidbody2D rb;
 
+	public bool isFalling = false;
+
 	void Start()
 	{
 		an = GetComponent<Animator>();
@@ -16,5 +18,13 @@ public class PlayerAnimations: MonoBehaviour
 	void Update()
 	{
 		an.SetBool("isMoving", rb.velocity.x > 0.1f || rb.velocity.y > 0.1f || rb.velocity.x < -0.1f || rb.velocity.y < -0.1f);
+	}
+
+	public IEnumerator FallingAnimation()
+	{
+		yield return new WaitForSeconds(0.1f);
+
+		isFalling = true;
+		an.SetBool("isFalling", isFalling);
 	}
 }

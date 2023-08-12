@@ -6,20 +6,24 @@ public class WeaponParent : MonoBehaviour
 {
 	public Vector3 mousePosition;
 
+	private Weapon weapon;
+
 	private SpriteRenderer sr;
 	private SpriteRenderer pSr;
 
 	private void Start()
 	{
+		weapon = GetComponentInChildren<Weapon>();
 		sr = GetComponentInChildren<SpriteRenderer>();
 		pSr = GetComponentInParent<SpriteRenderer>();
 	}
 
 	private void Update()
 	{
+		if (weapon.isAttacking)
+			return;
 		mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		mousePosition.z = 0;
-
 		Vector3 direction = (mousePosition - transform.position).normalized;
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

@@ -7,15 +7,13 @@ public class TriggersBehaviour : MonoBehaviour
 {
 	public PlayerData pd;
 
+	private PlayerAnimations pa;
+
 	private Inventory iv;
-
-	private Animator an;
-
-	public bool isFalling = false;
 
 	private void Start()
 	{
-		an = GetComponent<Animator>();
+		pa = GetComponent<PlayerAnimations>();
 		iv = GetComponent<Inventory>();
 	}
 
@@ -23,7 +21,7 @@ public class TriggersBehaviour : MonoBehaviour
 	{
 		if (collision.CompareTag("Void"))
 		{
-			StartCoroutine(FallingAnimation());
+			StartCoroutine(pa.FallingAnimation());
 		}
 	}
 
@@ -51,13 +49,5 @@ public class TriggersBehaviour : MonoBehaviour
 	private void OnTriggerExit2D(Collider2D collision)
 	{
 		
-	}
-
-	private IEnumerator FallingAnimation()
-	{
-		yield return new WaitForSeconds(0.1f);
-
-		isFalling = true;
-		an.SetBool("isFalling", isFalling);
 	}
 }

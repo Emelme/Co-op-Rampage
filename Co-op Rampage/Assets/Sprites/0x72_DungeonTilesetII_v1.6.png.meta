@@ -304,10 +304,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_8
       rect:
         serializedVersion: 2
-        x: 288
-        y: 488
-        width: 16
-        height: 16
+        x: 293
+        y: 489
+        width: 6
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -388,10 +388,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_28
       rect:
         serializedVersion: 2
-        x: 304
-        y: 480
-        width: 16
-        height: 32
+        x: 307
+        y: 481
+        width: 10
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -409,9 +409,9 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_29
       rect:
         serializedVersion: 2
-        x: 320
+        x: 323
         y: 481
-        width: 16
+        width: 10
         height: 21
       alignment: 9
       pivot: {x: 0.5, y: 0.31}
@@ -430,10 +430,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_30
       rect:
         serializedVersion: 2
-        x: 336
-        y: 480
-        width: 16
-        height: 32
+        x: 339
+        y: 481
+        width: 10
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -569,27 +569,6 @@ TextureImporter:
       bones: []
       spriteID: 0f80a5abe9e79884e89daac1cdb3b0af
       internalID: -1007766108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.6_54
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24c1cfdf15dd7ce4a822a70a62becd4e
-      internalID: 13379431
       vertices: []
       indices: 
       edges: []
@@ -850,10 +829,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_80
       rect:
         serializedVersion: 2
-        x: 288
+        x: 291
         y: 448
-        width: 16
-        height: 16
+        width: 10
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -871,9 +850,9 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_81
       rect:
         serializedVersion: 2
-        x: 304
+        x: 307
         y: 449
-        width: 16
+        width: 10
         height: 24
       alignment: 9
       pivot: {x: 0.5, y: 0.25}
@@ -892,10 +871,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_82
       rect:
         serializedVersion: 2
-        x: 320
+        x: 323
         y: 448
-        width: 16
-        height: 32
+        width: 10
+        height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -913,10 +892,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_83
       rect:
         serializedVersion: 2
-        x: 336
-        y: 448
-        width: 16
-        height: 32
+        x: 339
+        y: 449
+        width: 10
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1543,10 +1522,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_134
       rect:
         serializedVersion: 2
-        x: 288
-        y: 416
-        width: 16
-        height: 32
+        x: 293
+        y: 417
+        width: 6
+        height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1564,10 +1543,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_135
       rect:
         serializedVersion: 2
-        x: 304
-        y: 416
-        width: 16
-        height: 32
+        x: 307
+        y: 417
+        width: 10
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1585,10 +1564,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_136
       rect:
         serializedVersion: 2
-        x: 320
-        y: 416
-        width: 16
-        height: 32
+        x: 322
+        y: 417
+        width: 12
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1606,10 +1585,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_137
       rect:
         serializedVersion: 2
-        x: 336
-        y: 416
-        width: 16
-        height: 32
+        x: 341
+        y: 417
+        width: 9
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2152,10 +2131,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_184
       rect:
         serializedVersion: 2
-        x: 288
-        y: 384
-        width: 16
-        height: 32
+        x: 294
+        y: 385
+        width: 5
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2173,10 +2152,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_185
       rect:
         serializedVersion: 2
-        x: 304
-        y: 384
-        width: 16
-        height: 32
+        x: 310
+        y: 385
+        width: 8
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2194,10 +2173,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_186
       rect:
         serializedVersion: 2
-        x: 320
-        y: 384
-        width: 16
-        height: 32
+        x: 325
+        y: 385
+        width: 9
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2215,10 +2194,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_187
       rect:
         serializedVersion: 2
-        x: 336
-        y: 384
-        width: 16
-        height: 32
+        x: 339
+        y: 385
+        width: 10
+        height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2619,7 +2598,7 @@ TextureImporter:
         width: 10
         height: 22
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.5, y: 0.27}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2635,10 +2614,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_237
       rect:
         serializedVersion: 2
-        x: 304
-        y: 352
-        width: 16
-        height: 32
+        x: 307
+        y: 353
+        width: 10
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2656,9 +2635,9 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_238
       rect:
         serializedVersion: 2
-        x: 320
+        x: 324
         y: 353
-        width: 16
+        width: 8
         height: 30
       alignment: 9
       pivot: {x: 0.5, y: 0.25}
@@ -2677,10 +2656,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_239
       rect:
         serializedVersion: 2
-        x: 336
-        y: 352
-        width: 16
-        height: 32
+        x: 340
+        y: 353
+        width: 8
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2908,10 +2887,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_266
       rect:
         serializedVersion: 2
-        x: 336
-        y: 336
-        width: 16
-        height: 16
+        x: 340
+        y: 337
+        width: 10
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3413,9 +3392,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 320
+        y: 321
         width: 16
-        height: 32
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3433,10 +3412,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_291
       rect:
         serializedVersion: 2
-        x: 304
-        y: 320
-        width: 16
-        height: 32
+        x: 309
+        y: 321
+        width: 6
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3454,10 +3433,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_292
       rect:
         serializedVersion: 2
-        x: 320
-        y: 320
-        width: 16
-        height: 32
+        x: 324
+        y: 321
+        width: 12
+        height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3874,10 +3853,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_340
       rect:
         serializedVersion: 2
-        x: 288
-        y: 288
-        width: 16
-        height: 32
+        x: 289
+        y: 291
+        width: 14
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3895,10 +3874,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_341
       rect:
         serializedVersion: 2
-        x: 304
-        y: 288
-        width: 16
-        height: 32
+        x: 305
+        y: 291
+        width: 14
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3916,10 +3895,10 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_342
       rect:
         serializedVersion: 2
-        x: 320
-        y: 288
-        width: 16
-        height: 32
+        x: 324
+        y: 289
+        width: 7
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
