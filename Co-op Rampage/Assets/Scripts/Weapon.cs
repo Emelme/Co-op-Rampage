@@ -13,7 +13,7 @@ public class Weapon : MonoBehaviour
 
 	private SpriteRenderer sr;
 	private Animator an;
-	private CameraShake cs;
+	private CinemachineShake cs;
 
 	public bool isReloading;
 	public bool isAttacking;
@@ -27,7 +27,7 @@ public class Weapon : MonoBehaviour
 
 		sr = GetComponent<SpriteRenderer>();
 		an = GetComponent<Animator>();
-		cs = FindAnyObjectByType<CameraShake>().GetComponent<CameraShake>();
+		cs = FindAnyObjectByType<CinemachineShake>().GetComponent<CinemachineShake>();
 
 		sr.sprite = wd.sprite;
 		transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
@@ -49,7 +49,7 @@ public class Weapon : MonoBehaviour
 			an.SetBool("isAttacking", true);
 			isAttacking = true;
 			DetectColliders();
-			cs.ShakeCamera(2f, 0.1f);
+			cs.ShakeCamera(2f, 0.25f);
 			yield return new WaitForEndOfFrame();
 			an.SetBool("isAttacking", false);
 			yield return new WaitForSeconds(wd.useTime * pd.useTime);
