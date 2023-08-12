@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ef3fcf8fab37764395a9deccd97d6b9, type: 3}
-  m_Name: Knight
+  m_Name: Wizard
   m_EditorClassIdentifier: 
-  character: 0
-  isHolding: {fileID: 0}
+  character: 2
+  animatorController: {fileID: 9100000, guid: 38d4535acdad8f447b964ef5e030c78f, type: 2}
   money: 0
   maxInventorySlots: 2
   speed: 8

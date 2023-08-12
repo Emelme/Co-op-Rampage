@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6354404307843301944}
   - component: {fileID: 694198182190265054}
   - component: {fileID: 4993332793198332619}
+  - component: {fileID: 6265191558499339929}
   - component: {fileID: 3397020462005825562}
   - component: {fileID: 2924770635358633933}
   - component: {fileID: 855607967383509320}
@@ -77,10 +78,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41ed297dbaeb5a49adb25aca78e86ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runParticle: {fileID: 0}
-  moveSpeed: 8
+  pd: {fileID: 11400000, guid: c423f9f955c88874cbef6f3dea8f9450, type: 2}
   acceleration: 16
   decceleration: 24
+--- !u!114 &6265191558499339929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122199061292160461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f3db1dbb1b2b24d839ae43b721115e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pd: {fileID: 11400000, guid: c423f9f955c88874cbef6f3dea8f9450, type: 2}
+  activeWeaponSlot: 0
+  activeItemSlot: 0
+  weaponInventory: []
+  itemInventory: []
+  armorInventory: {fileID: 0}
 --- !u!114 &3397020462005825562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93dcdfd0f89bf6742ab439bdc8354f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pd: {fileID: 11400000, guid: c423f9f955c88874cbef6f3dea8f9450, type: 2}
   isFalling: 0
 --- !u!114 &2924770635358633933
 MonoBehaviour:
@@ -213,7 +232,7 @@ Animator:
   m_GameObject: {fileID: 2122199061292160461}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 866ffb3c529c27747910d942f5b21083, type: 2}
+  m_Controller: {fileID: 9100000, guid: 496cce30cd95ce540aeb99a48cc1f7cb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

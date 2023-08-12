@@ -2614,12 +2614,12 @@ TextureImporter:
       name: 0x72_DungeonTilesetII_v1.6_236
       rect:
         serializedVersion: 2
-        x: 288
+        x: 291
         y: 353
-        width: 16
+        width: 10
         height: 22
       alignment: 9
-      pivot: {x: 0.5, y: 0.27}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

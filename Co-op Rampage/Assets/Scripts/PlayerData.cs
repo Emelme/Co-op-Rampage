@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Animations;
 
 [CreateAssetMenu]
 public class PlayerData : ScriptableObject
@@ -8,6 +9,8 @@ public class PlayerData : ScriptableObject
 	public enum CharacterType { knight, elf, wizard }
 
 	public CharacterType character;
+
+	public AnimatorController animatorController;
 
 	public int money = 0;
 
