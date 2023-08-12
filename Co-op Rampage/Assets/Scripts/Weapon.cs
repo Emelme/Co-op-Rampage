@@ -14,6 +14,8 @@ public class Weapon : MonoBehaviour
 	public bool isReloading;
 	public bool isAttacking;
 
+	public LayerMask enemyLayer;
+
 	private void Start()
 	{
 		sr = GetComponent<SpriteRenderer>();
@@ -38,6 +40,7 @@ public class Weapon : MonoBehaviour
 			isReloading = true;
 			an.SetBool("isAttacking", true);
 			isAttacking = true;
+			DetectColliders();
 			yield return new WaitForEndOfFrame();
 			an.SetBool("isAttacking", false);
 			yield return new WaitForSeconds(wd.useTime);
@@ -48,5 +51,13 @@ public class Weapon : MonoBehaviour
 	public void ResetIsAttacking()
 	{
 		isAttacking = false;
+	}
+
+	public void DetectColliders()
+	{
+		foreach (Collider2D collider in Physics2D.OverlapCircleAll(transform.position + (Vector3)wd.range, wd.radius, enemyLayer))
+		{
+			collider.gameObject.SetActive(false);
+		}
 	}
 }

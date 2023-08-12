@@ -19,4 +19,8 @@ public class WeaponData : ScriptableObject
 	public int critDamage;
 
 	public int knockdown;
+
+	public Vector2 range;
+
+	public float radius;
 }

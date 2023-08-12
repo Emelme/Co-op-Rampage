@@ -19,3 +19,4 @@ MonoBehaviour:
   critChance: 25
   critDamage: 20
   knockdown: 5
+  range: 0
