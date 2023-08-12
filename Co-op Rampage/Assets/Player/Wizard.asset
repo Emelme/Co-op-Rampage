@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wizard
   m_EditorClassIdentifier: 
   character: 2
-  animatorController: {fileID: 9100000, guid: 38d4535acdad8f447b964ef5e030c78f, type: 2}
+  runtimeAnimatorController: {fileID: 9100000, guid: 38d4535acdad8f447b964ef5e030c78f, type: 2}
   money: 0
   maxInventorySlots: 2
   speed: 8
@@ -24,4 +24,5 @@ MonoBehaviour:
   force: 0
   accuracy: 100
   crit: 0
+  distance: 1
   useTime: 1

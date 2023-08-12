@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Knight
   m_EditorClassIdentifier: 
   character: 0
-  animatorController: {fileID: 9100000, guid: 866ffb3c529c27747910d942f5b21083, type: 2}
+  runtimeAnimatorController: {fileID: 9100000, guid: 866ffb3c529c27747910d942f5b21083, type: 2}
   money: 0
   maxInventorySlots: 2
   speed: 8
@@ -24,4 +24,5 @@ MonoBehaviour:
   force: 0
   accuracy: 100
   crit: 0
+  distance: 1
   useTime: 1
