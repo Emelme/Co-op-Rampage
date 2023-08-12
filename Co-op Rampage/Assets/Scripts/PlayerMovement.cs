@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-	public PlayerData pd;
+	private GameManager gm;
+	private PlayerData pd;
 
 	private Rigidbody2D rb;
 
@@ -14,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Start()
 	{
+		gm = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
+		pd = gm.playerDatas[(int)gm.charachterType];
+
 		rb = GetComponent<Rigidbody2D>();
 	}
 

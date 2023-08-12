@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerAnimations: MonoBehaviour
 {
+	private GameManager gm;
+
+	private PlayerData pd;
+
 	private Animator an;
 	private Rigidbody2D rb;
 
@@ -11,7 +15,10 @@ public class PlayerAnimations: MonoBehaviour
 
 	void Start()
 	{
+		gm = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
+		pd = gm.playerDatas[(int)gm.charachterType];
 		an = GetComponent<Animator>();
+		an.runtimeAnimatorController = pd.runtimeAnimatorController;
 		rb = GetComponent<Rigidbody2D>();
 	}
 

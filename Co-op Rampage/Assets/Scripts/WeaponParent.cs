@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponParent : MonoBehaviour
 {
-	public Vector3 mousePosition;
+	private Vector3 mousePosition;
 
 	private Weapon weapon;
 

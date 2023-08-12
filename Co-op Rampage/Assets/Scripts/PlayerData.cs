@@ -10,7 +10,7 @@ public class PlayerData : ScriptableObject
 
 	public CharacterType character;
 
-	public AnimatorController animatorController;
+	public RuntimeAnimatorController runtimeAnimatorController;
 
 	public int money = 0;
 
@@ -32,5 +32,7 @@ public class PlayerData : ScriptableObject
 
 	public int crit = 0;
 
-	public int useTime = 1;
+	public float distance = 1f;
+
+	public float useTime = 1f;
 }

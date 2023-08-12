@@ -4,9 +4,21 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-	public PlayerData knight;
-	public PlayerData elf;
-	public PlayerData wizard;
+	public enum CharachterType
+	{
+		knight,
+		elf,
+		wizard
+	}
+
+	public CharachterType charachterType;
+
+	public PlayerData[] playerDatas = new PlayerData[3];
+
+	private void Awake()
+	{
+		charachterType = (CharachterType)Random.Range(0, 3);
+	}
 
 	private void Update()
 	{

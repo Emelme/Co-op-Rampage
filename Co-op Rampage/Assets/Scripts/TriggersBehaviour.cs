@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class TriggersBehaviour : MonoBehaviour
 {
-	public PlayerData pd;
-
 	private PlayerAnimations pa;
 
 	private Inventory iv;
@@ -44,10 +42,5 @@ public class TriggersBehaviour : MonoBehaviour
 			iv.AddItem(collision.GetComponent<Armor>().ad);
 			Destroy(collision.gameObject);
 		}
-	}
-
-	private void OnTriggerExit2D(Collider2D collision)
-	{
-		
 	}
 }

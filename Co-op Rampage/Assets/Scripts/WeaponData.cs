@@ -10,17 +10,17 @@ public class WeaponData : ScriptableObject
 
 	public Sprite sprite;
 
-	public int damage;
+	public int damage = 1;
 
-	public float useTime;
+	public float useTime = 1f;
 
-	public int critChance;
+	public int critChance = 50;
 
-	public int critDamage;
+	public int critDamage = 2;
 
-	public int knockdown;
+	public int knockdown = 1;
 
-	public Vector2 range;
+	public float range = 0.8f;
 
-	public float radius;
+	public float distance = 1f;
 }
