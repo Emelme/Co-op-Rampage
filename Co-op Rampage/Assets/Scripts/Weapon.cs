@@ -35,7 +35,7 @@ public class Weapon : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetButtonDown("Attack"))
+		if (Input.GetButton("Attack"))
 		{
 			StartCoroutine(Attack());
 		}

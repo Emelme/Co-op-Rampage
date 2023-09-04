@@ -22,6 +22,7 @@ public class WeaponParent : MonoBehaviour
 	{
 		if (weapon.isAttacking)
 			return;
+
 		mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		mousePosition.z = 0;
 		Vector3 direction = (mousePosition - transform.position).normalized;

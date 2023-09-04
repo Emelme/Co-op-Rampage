@@ -16,6 +16,8 @@ TagManager:
   - Slot1Item
   - Slot2Item
   - SlotArmor
+  - Door
+  - Door Trigger
   layers:
   - Default
   - TransparentFX

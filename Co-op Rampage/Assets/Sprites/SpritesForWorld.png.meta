@@ -1662,10 +1662,10 @@ TextureImporter:
         serializedVersion: 2
         x: 32
         y: 272
-        width: 16
+        width: 32
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: -1.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1678,57 +1678,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpritesForWorld_78
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 272
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a0b07c8c2ae41044980475f782775f5
-      internalID: 1158535874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpritesForWorld_79
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6f47b9581b29f04fb383cdb8c4c3d49
-      internalID: 105748658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: SpritesForWorld_80
       rect:
         serializedVersion: 2
         x: 32
         y: 256
-        width: 16
+        width: 32
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: -0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1741,54 +1699,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpritesForWorld_81
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed92d0c34c794a148bdeb4113882aa5b
-      internalID: 1409382969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpritesForWorld_82
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afc461f4f737ff943b1e93fc4277d62d
-      internalID: -895535946
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: SpritesForWorld_83
       rect:
         serializedVersion: 2
         x: 80
         y: 256
-        width: 16
+        width: 32
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1804,36 +1720,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpritesForWorld_84
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ccf1ac601b7e3141ade402655c263c4
-      internalID: 233868057
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: SpritesForWorld_85
       rect:
         serializedVersion: 2
         x: 16
         y: 240
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1851,7 +1746,7 @@ TextureImporter:
         serializedVersion: 2
         x: 32
         y: 240
-        width: 16
+        width: 32
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1867,36 +1762,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpritesForWorld_87
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 240
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39e22d7cf3f0ec045a7c0abbeea33e12
-      internalID: 434948935
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: SpritesForWorld_88
       rect:
         serializedVersion: 2
         x: 64
         y: 240
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1914,7 +1788,7 @@ TextureImporter:
         serializedVersion: 2
         x: 80
         y: 240
-        width: 16
+        width: 32
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1925,27 +1799,6 @@ TextureImporter:
       bones: []
       spriteID: e69df3d361f868e4db7d0fccab68f306
       internalID: -1334190813
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpritesForWorld_90
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 240
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87ad0aea608475c48a57d2dcb0ae5d43
-      internalID: -2009098147
       vertices: []
       indices: 
       edges: []

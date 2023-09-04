@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+	private RandomHolleSpawn rhs;
+
+	public bool isLevelCompleted = false;
+
 	public enum CharachterType
 	{
 		knight,
@@ -20,11 +24,30 @@ public class GameManager : MonoBehaviour
 		charachterType = (CharachterType)Random.Range(0, 3);
 	}
 
+	private void Start()
+	{
+		rhs = FindAnyObjectByType<RandomHolleSpawn>().GetComponent<RandomHolleSpawn>();
+	}
+
 	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.R))
 		{
 			RestartLevel();
+		}
+
+		if (Input.GetKeyDown(KeyCode.Slash))
+		{
+			isLevelCompleted = true;
+		}
+		else
+		{
+			isLevelCompleted = false;
+		}
+
+		if (isLevelCompleted)
+		{
+			rhs.CreateHolle();
 		}
 	}
 
