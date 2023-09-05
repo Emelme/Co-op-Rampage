@@ -4,9 +4,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-	private RandomHolleSpawn rhs;
+	public GameObject[] levels1;
+	public GameObject[] levels2;
+	public GameObject[] levels3;
+	public GameObject[] levels4;
+	public GameObject[] levels5;
+	public GameObject[] shop;
+	public GameObject[] boss;
 
 	public bool isLevelCompleted = false;
+
+	private RandomHolleSpawn rhs;
 
 	public enum CharachterType
 	{
@@ -14,19 +22,12 @@ public class GameManager : MonoBehaviour
 		elf,
 		wizard
 	}
-
 	public CharachterType charachterType;
-
 	public PlayerData[] playerDatas = new PlayerData[3];
 
 	private void Awake()
 	{
 		charachterType = (CharachterType)Random.Range(0, 3);
-	}
-
-	private void Start()
-	{
-		rhs = FindAnyObjectByType<RandomHolleSpawn>().GetComponent<RandomHolleSpawn>();
 	}
 
 	private void Update()
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
 
 		if (isLevelCompleted)
 		{
+			rhs = FindAnyObjectByType<RandomHolleSpawn>().GetComponent<RandomHolleSpawn>();
 			rhs.CreateHolle();
 		}
 	}
