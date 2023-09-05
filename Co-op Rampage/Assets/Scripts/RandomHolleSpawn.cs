@@ -15,6 +15,9 @@ public class RandomHolleSpawn : MonoBehaviour
 
 	public List<Vector3Int> allTiles;
 
+	public GameObject triggerObject;
+	public BoxCollider2D bc;
+
 	private void Start()
 	{
 		rf = GetComponent<RandomFloor>();
@@ -37,5 +40,19 @@ public class RandomHolleSpawn : MonoBehaviour
 		Vector3Int position = allTiles[Random.Range(0, allTiles.Count)];
 
 		tilemap.SetTile(position, tiles[Random.Range(0, tiles.Length)]);
+
+		triggerObject = new GameObject("TriggerColliderOfHolle");
+
+		triggerObject.AddComponent<BoxCollider2D>();
+
+		bc = triggerObject.GetComponent<BoxCollider2D>();
+
+		bc.isTrigger = true;
+		bc.size = new(1f, 1f);
+		bc.offset = new(0.5f, 0.5f);
+
+		triggerObject.transform.position = position;
+
+		triggerObject.AddComponent<Holle>();
 	}
 }

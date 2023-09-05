@@ -22,7 +22,7 @@ public class TriggersBehaviour : MonoBehaviour
 			StartCoroutine(pa.FallingAnimation());
 		}
 	}
-
+	
 	private void OnTriggerStay2D(Collider2D collision)
 	{
 		if(collision.CompareTag("Weapon") && Input.GetButtonDown("Ok"))
