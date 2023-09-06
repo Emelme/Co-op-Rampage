@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6617244086871823236}
   - component: {fileID: 2546903584752740071}
   - component: {fileID: 333224690147256755}
+  - component: {fileID: 7899666736443763283}
   m_Layer: 0
   m_Name: Long with colons
   m_TagString: Untagged
@@ -73,6 +74,20 @@ MonoBehaviour:
   positions:
   - {x: -14, y: -1, z: 0}
   - {x: 12, y: -1, z: 0}
+--- !u!114 &7899666736443763283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160712808708474691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 282eab85b1c70a44ca0a0611c4cec41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: {x: -12, y: -1, z: 0}
+  end: {x: -8, y: -1, z: 0}
 --- !u!1 &272007767270000837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,7 +2587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04976799df50f54ba128eff723155a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
@@ -2586,10 +2601,10 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.06666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: c556d468582321d4b92ac99af9a9b4c1, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e6f795cffec304a45af2c65374235d61, type: 2}
 --- !u!114 &8199683714375554475
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-	public PlayerData pd;
+	private GameManager gm;
+	private PlayerData pd;
 
 	public int activeWeaponSlot = 0;
 	public int activeItemSlot = 0;
@@ -16,6 +17,9 @@ public class Inventory : MonoBehaviour
 
 	private void Start()
 	{
+		gm = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
+		pd = gm.playerDatas[(int)gm.charachterType];
+
 		for (int i = 0; i < pd.maxInventorySlots; i++)
 		{
 			weaponInventory.Insert(i, null);
@@ -147,9 +151,7 @@ public class Inventory : MonoBehaviour
 
 	public void Swap<T>(List<T> list, int slot1, int slot2)
 	{
-		T temp = list[slot1];
-		list[slot1] = list[slot2];
-		list[slot2] = temp;
+		(list[slot2], list[slot1]) = (list[slot1], list[slot2]);
 	}
 
 	public bool IsInventoryFull(List<WeaponData> list)

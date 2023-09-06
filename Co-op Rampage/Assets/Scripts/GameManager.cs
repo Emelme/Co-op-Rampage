@@ -12,6 +12,14 @@ public class GameManager : MonoBehaviour
 	public GameObject[] shop;
 	public GameObject[] boss;
 
+	public GameObject currentLevel;
+
+	public int levelIndexWasWas = -1;
+	public int levelIndexWas = -1;
+	public int currentLevelIndex = -1;
+
+	public int levelNumber = 0;
+
 	public bool isLevelCompleted = false;
 
 	private RandomHolleSpawn rhs;
@@ -28,6 +36,11 @@ public class GameManager : MonoBehaviour
 	private void Awake()
 	{
 		charachterType = (CharachterType)Random.Range(0, 3);
+	}
+
+	private void Start()
+	{
+		CreateNewLevel();
 	}
 
 	private void Update()
@@ -50,6 +63,29 @@ public class GameManager : MonoBehaviour
 		{
 			rhs = FindAnyObjectByType<RandomHolleSpawn>().GetComponent<RandomHolleSpawn>();
 			rhs.CreateHolle();
+		}
+	}
+
+	public void CreateNewLevel()
+	{
+		if(levelNumber > 0 && levelNumber < 4)
+		{
+			levelIndexWasWas = levelIndexWas;
+			levelIndexWas = currentLevelIndex;
+
+			currentLevelIndex = Random.Range(0, levels1.Length);
+
+			while (currentLevelIndex == levelIndexWas || currentLevelIndex == levelIndexWasWas)
+			{
+				currentLevelIndex = Random.Range(0, levels1.Length);
+			}
+
+			Destroy(currentLevel);
+
+			currentLevel = Instantiate(levels1[currentLevelIndex]);
+
+			levelNumber++;
+
 		}
 	}
 

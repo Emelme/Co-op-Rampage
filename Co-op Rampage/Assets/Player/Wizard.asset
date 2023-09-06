@@ -16,7 +16,7 @@ MonoBehaviour:
   runtimeAnimatorController: {fileID: 9100000, guid: 38d4535acdad8f447b964ef5e030c78f, type: 2}
   money: 0
   maxInventorySlots: 2
-  speed: 8
+  speed: 7.9999995
   health: 50
   maxHealth: 50
   protection: 0

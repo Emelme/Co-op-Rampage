@@ -22,7 +22,7 @@ public class ChestsSpawn : MonoBehaviour
 		{
 			Vector2 newPos = grid.CellToWorld(position);
 			newPos += new Vector2(0.5f, 0.6f);
-			Instantiate(chests[Random.Range(0, chests.Length)], newPos, Quaternion.identity);
+			Instantiate(chests[Random.Range(0, chests.Length)], newPos, Quaternion.identity, transform);
 		}
 	}
 }

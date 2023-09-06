@@ -49,7 +49,7 @@ public class Weapon : MonoBehaviour
 			an.SetBool("isAttacking", true);
 			isAttacking = true;
 			DetectColliders();
-			cs.ShakeCamera(2f, 0.25f);
+			cs.ShakeCamera(0.5f, 0.25f);
 			yield return new WaitForEndOfFrame();
 			an.SetBool("isAttacking", false);
 			yield return new WaitForSeconds(wd.useTime * pd.useTime);
@@ -66,7 +66,7 @@ public class Weapon : MonoBehaviour
 	{
 		foreach (Collider2D collider in Physics2D.OverlapCircleAll(new Vector2(pd.distance * wd.distance * transform.localPosition.x + transform.position.x, transform.position.y), wd.range, enemyLayer))
 		{
-			collider.gameObject.SetActive(false);
+			Enemy enemy = collider.GetComponentInParent<Enemy>();
 		}
 	}
 

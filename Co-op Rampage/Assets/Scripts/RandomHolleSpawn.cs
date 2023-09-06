@@ -5,6 +5,8 @@ using UnityEngine.Tilemaps;
 
 public class RandomHolleSpawn : MonoBehaviour
 {
+	private Grid grid;
+
 	private RandomFloor rf;
 
 	private Vector2Int start;
@@ -20,6 +22,8 @@ public class RandomHolleSpawn : MonoBehaviour
 
 	private void Start()
 	{
+		grid = GetComponentInParent<Grid>();
+
 		rf = GetComponent<RandomFloor>();
 
 		start = rf.start;
@@ -49,9 +53,11 @@ public class RandomHolleSpawn : MonoBehaviour
 
 		bc.isTrigger = true;
 		bc.size = new(1f, 1f);
-		bc.offset = new(0.5f, 0.5f);
+		bc.offset = Vector2.zero;
 
-		triggerObject.transform.position = position;
+		Vector2 newPos = grid.CellToWorld(position);
+		newPos += new Vector2(0.5f, 0.5f);
+		triggerObject.transform.position = newPos;
 
 		triggerObject.AddComponent<Holle>();
 	}

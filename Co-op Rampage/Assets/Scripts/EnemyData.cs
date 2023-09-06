@@ -5,9 +5,11 @@ using UnityEngine;
 [CreateAssetMenu]
 public class EnemyData : ScriptableObject
 {
-	public new string name;
+	public enum EnemyType { knight, elf, wizard }
 
-	public Sprite sprite;
+	public EnemyType enemyType;
+
+	public RuntimeAnimatorController runtimeAnimatorController;
 
 	public int hp;
 

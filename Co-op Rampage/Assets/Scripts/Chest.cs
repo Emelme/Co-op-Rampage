@@ -29,12 +29,18 @@ public class Chest : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		isTriggered = true;
+		if (collision.CompareTag("Player"))
+		{
+			isTriggered = true;
+		}
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
-		isTriggered = false;
+		if (collision.CompareTag("Player"))
+		{
+			isTriggered = false;
+		}
 	}
 
 	private void OnTriggerStay2D(Collider2D collision)
