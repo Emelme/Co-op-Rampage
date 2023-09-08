@@ -67,7 +67,33 @@ public class Weapon : MonoBehaviour
 		foreach (Collider2D collider in Physics2D.OverlapCircleAll(new Vector2(pd.distance * wd.distance * transform.localPosition.x + transform.position.x, transform.position.y), wd.range, enemyLayer))
 		{
 			Enemy enemy = collider.GetComponentInParent<Enemy>();
+
+			if (Random.Range(1, 101) <= pd.accuracy)
+			{
+				enemy.hp -= wd.damage * pd.force * Crit();
+			}
+			else
+			{
+				Miss();
+			}
 		}
+	}
+
+	public int Crit()
+	{
+		if (Random.Range(1, 101) <= pd.crit)
+		{
+			return wd.critDamage;
+		}
+		else
+		{
+			return 1;
+		}
+	}
+
+	public void Miss()
+	{
+
 	}
 
 	private void OnDrawGizmosSelected()

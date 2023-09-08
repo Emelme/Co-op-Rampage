@@ -14,8 +14,6 @@ public class WeaponData : ScriptableObject
 
 	public float useTime = 1f;
 
-	public int critChance = 50;
-
 	public int critDamage = 2;
 
 	public int knockdown = 1;

@@ -1588,7 +1588,6 @@ GameObject:
   - component: {fileID: 696763575}
   - component: {fileID: 696763578}
   - component: {fileID: 696763577}
-  - component: {fileID: 696763576}
   m_Layer: 6
   m_Name: DamageTrigger
   m_TagString: Untagged
@@ -1611,18 +1610,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 970181882}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &696763576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696763574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20c9f7c048b03a84db7602a003bbd01b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &696763577
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1655,7 +1642,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1666,7 +1653,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.66, y: 0.33}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
 --- !u!50 &696763578
 Rigidbody2D:
@@ -1954,8 +1941,8 @@ GameObject:
   - component: {fileID: 970181880}
   - component: {fileID: 970181879}
   - component: {fileID: 970181878}
-  - component: {fileID: 970181877}
   - component: {fileID: 970181883}
+  - component: {fileID: 970181877}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1975,7 +1962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1633f465d5a9344a5dbe0712849418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ed: {fileID: 0}
   isPlayerDetected: 0
   distance: 0
 --- !u!195 &970181878
@@ -2109,7 +2095,7 @@ Transform:
   m_GameObject: {fileID: 970181876}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 1.72, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2129,6 +2115,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41b71ae20aedae429ed817bbd3a4bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ed1:
+  - {fileID: 11400000, guid: 0e1ec9e6a75cf884bad122088faa352f, type: 2}
+  ed2: []
+  ed3: []
+  ed4: []
+  ed5: []
+  currentIndex: -1
+  currentEd: {fileID: 0}
+  hp: 0
+  speed: 0
 --- !u!1 &1092677361
 GameObject:
   m_ObjectHideFlags: 0
@@ -3167,7 +3163,7 @@ SceneRoots:
   - {fileID: 265433290}
   - {fileID: 7591366444638998531}
   - {fileID: 1553131159777834191}
+  - {fileID: 2078754346}
   - {fileID: 584832182}
   - {fileID: 1945875585}
-  - {fileID: 2078754346}
   - {fileID: 970181882}

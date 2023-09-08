@@ -19,10 +19,10 @@ MonoBehaviour:
   speed: 7.9999995
   health: 50
   maxHealth: 50
-  protection: 0
+  protection: 1
   agility: 0
-  force: 0
+  force: 1
   accuracy: 100
-  crit: 0
+  crit: 50
   distance: 1
   useTime: 1

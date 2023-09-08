@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47f2ffa4daab65d4984b64cfec6a61e2, type: 3}
-  m_Name: Standart
+  m_Name: Green Slime
   m_EditorClassIdentifier: 
-  name: Standart
-  sprite: {fileID: -126788050, guid: f0deb9bbd8c9dc8499b39ba089976df3, type: 3}
-  hp: 10
+  enemyType: 0
+  runtimeAnimatorController: {fileID: 9100000, guid: 189c32d9fe4a64b44b47fe226550e718, type: 2}
+  hp: 30
   speed: 4

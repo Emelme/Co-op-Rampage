@@ -16,8 +16,7 @@ MonoBehaviour:
   sprite: {fileID: -1001952386, guid: f0deb9bbd8c9dc8499b39ba089976df3, type: 3}
   damage: 10
   useTime: 0.5
-  critChance: 50
-  critDamage: 20
+  critDamage: 2
   knockdown: 5
   range: 0.8
   distance: 1

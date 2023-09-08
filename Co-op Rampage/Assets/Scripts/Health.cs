@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-	private GameManager gm;
-	private PlayerData pd;
+	private PlayerBehaviour pb;
 
 	public Sprite hollowHeart;
 	public Sprite halfHeart;
@@ -19,17 +18,16 @@ public class Health : MonoBehaviour
 
 	private void Start()
 	{
+		pb = FindAnyObjectByType<PlayerBehaviour>();
+
 		for (int i = 0; i < hearts.Length; i++)
 		{
 			images[i] = hearts[i].GetComponent<Image>();
 		}
 
-		gm = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
-		pd = gm.playerDatas[(int)gm.charachterType];
-
-		if (pd.health > pd.maxHealth)
+		if (pb.health > pb.maxHealth)
 		{
-			pd.health = pd.maxHealth;
+			pb.health = pb.maxHealth;
 		}
 
 		NewMaxHealth();
@@ -66,49 +64,50 @@ public class Health : MonoBehaviour
 
 	public void AddHealth(int value)
 	{
-		if (pd.health + value > pd.maxHealth)
+		if (pb.health + value > pb.maxHealth)
 		{
-			pd.health = pd.maxHealth;
+			pb.health = pb.maxHealth;
 		}
 
-		pd.health += value;
+		pb.health += value;
 		ResetHearts();
 	}
 
 	public void SubHealth(int value)
 	{
-		if (pd.health - value < 1)
+		if (pb.health - value < 1)
 		{
 			isDead = true;
 		}
 
-		pd.health -= value;
+		pb.health -= value;
 		ResetHearts();
 	}
 
 	public void AddMaxHealth(int value)
 	{
-		if (pd.maxHealth > 90)
+		if (pb.maxHealth > 90)
 		{
 			value = 0;
 		}
 
-		pd.maxHealth += value;
+		pb.maxHealth += value;
 		NewMaxHealth();
+		ResetHearts();
 	}
 
 	public void SubMaxHealth(int value)
 	{
-		if (pd.maxHealth < 20)
+		if (pb.maxHealth < 20)
 		{
 			value = 0;
 		}
 
-		pd.maxHealth -= value;
+		pb.maxHealth -= value;
 
-		if (pd.health > pd.maxHealth)
+		if (pb.health > pb.maxHealth)
 		{
-			pd.health = pd.maxHealth;
+			pb.health = pb.maxHealth;
 		}
 
 		NewMaxHealth();
@@ -117,8 +116,8 @@ public class Health : MonoBehaviour
 
 	public void ResetHearts()
 	{
-		int fullHearts = pd.health / 10;
-		int halfHearts = (pd.health % 10) / 5;
+		int fullHearts = pb.health / 10;
+		int halfHearts = (pb.health % 10) / 5;
 
 		for (int i = 0; i < images.Length; i++)
 		{
@@ -141,7 +140,7 @@ public class Health : MonoBehaviour
 	{
 		for (int i = 0; i < hearts.Length; i++)
 		{
-			if (pd.maxHealth / 10 > i)
+			if (pb.maxHealth / 10 > i)
 			{
 				hearts[i].SetActive(true);
 			}
@@ -151,6 +150,6 @@ public class Health : MonoBehaviour
 			}
 		}
 
-		Debug.Log(pd.maxHealth);
+		Debug.Log(pb.maxHealth);
 	}
 }

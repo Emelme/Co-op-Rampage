@@ -17,7 +17,7 @@ public class EnemySlowTrigger : MonoBehaviour
 	{
 		if (collision.CompareTag("Player"))
 		{
-			pd.speed /= 10f;
+			pd.speed /= 2f;
 		}
 	}
 
@@ -25,7 +25,7 @@ public class EnemySlowTrigger : MonoBehaviour
 	{
 		if (collision.CompareTag("Player"))
 		{
-			pd.speed *= 10f; 
+			pd.speed *= 2f; 
 		}
 	}
 }

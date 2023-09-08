@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class EnemyFollower : MonoBehaviour
 {
-	public EnemyData ed;
+	private Enemy en;
 
 	private GameObject player;
 
@@ -26,7 +26,7 @@ public class EnemyFollower : MonoBehaviour
 		agent = GetComponent<NavMeshAgent>();
 		agent.updateRotation = false;
 		agent.updateUpAxis = false;
-		agent.speed = ed.speed;
+		en = GetComponent<Enemy>();
 	}
 
 	private void Update()
@@ -55,6 +55,8 @@ public class EnemyFollower : MonoBehaviour
 			Vector2 direction = playerPosition - (Vector2)transform.position;
 
 			Vector2 targetPosition = playerPosition - direction.normalized * 1f;
+
+			agent.speed = en.speed;
 
 			agent.SetDestination(targetPosition);
 		}

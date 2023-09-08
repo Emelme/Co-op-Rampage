@@ -7,10 +7,8 @@ public class RandomHolleSpawn : MonoBehaviour
 {
 	private Grid grid;
 
-	private RandomFloor rf;
-
-	private Vector2Int start;
-	private Vector2Int end;
+	public Vector2Int start;
+	public Vector2Int end;
 
 	private Tilemap tilemap;
 	public Tile[] tiles = new Tile[2];
@@ -23,11 +21,6 @@ public class RandomHolleSpawn : MonoBehaviour
 	private void Start()
 	{
 		grid = GetComponentInParent<Grid>();
-
-		rf = GetComponent<RandomFloor>();
-
-		start = rf.start;
-		end = rf.end;
 
 		tilemap = GetComponent<Tilemap>();
 

@@ -22,15 +22,15 @@ public class PlayerData : ScriptableObject
 
 	public int maxHealth = 50;
 
-	public int protection = 0;
+	public int protection = 1;
 
 	public int agility = 0;
 
-	public int force = 0;
+	public int force = 1;
 
 	public int accuracy = 100;
 
-	public int crit = 0;
+	public int crit = 10;
 
 	public float distance = 1f;
 
