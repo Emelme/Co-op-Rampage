@@ -16,7 +16,7 @@ public class WeaponData : ScriptableObject
 
 	public int critDamage = 2;
 
-	public int knockdown = 1;
+	public int knockback = 1;
 
 	public float range = 0.8f;
 

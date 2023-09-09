@@ -14,4 +14,10 @@ public class EnemyData : ScriptableObject
 	public int hp;
 
 	public float speed;
+
+	public int moneyMax;
+
+	public int moneyMin;
+
+	public int touchDamage;
 }

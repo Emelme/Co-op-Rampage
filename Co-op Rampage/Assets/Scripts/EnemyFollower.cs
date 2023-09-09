@@ -43,6 +43,15 @@ public class EnemyFollower : MonoBehaviour
 			}
 		}
 
+		if (distance < 1f || !isPlayerDetected)
+		{
+			en.animator.SetBool("isRunning", false);
+		}
+		else if (distance > 1f && isPlayerDetected)
+		{
+			en.animator.SetBool("isRunning", true);
+		}
+
 		if (!isPlayerDetected && (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")))
 		{
 			isPlayerDetected = true;
@@ -54,7 +63,7 @@ public class EnemyFollower : MonoBehaviour
 
 			Vector2 direction = playerPosition - (Vector2)transform.position;
 
-			Vector2 targetPosition = playerPosition - direction.normalized * 1f;
+			Vector2 targetPosition = playerPosition - direction.normalized * 0.75f;
 
 			agent.speed = en.speed;
 

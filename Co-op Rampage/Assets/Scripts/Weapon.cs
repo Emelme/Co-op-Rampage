@@ -10,6 +10,8 @@ public class Weapon : MonoBehaviour
 
 	private GameManager gm;
 	private PlayerData pd;
+	private Rigidbody2D player;
+	public float knockbackStrength = 16f;
 
 	private SpriteRenderer sr;
 	private Animator an;
@@ -24,6 +26,7 @@ public class Weapon : MonoBehaviour
 	{
 		gm = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
 		pd = gm.playerDatas[(int)gm.charachterType];
+		player = GetComponentInParent<Rigidbody2D>();
 
 		sr = GetComponent<SpriteRenderer>();
 		an = GetComponent<Animator>();
@@ -71,12 +74,21 @@ public class Weapon : MonoBehaviour
 			if (Random.Range(1, 101) <= pd.accuracy)
 			{
 				enemy.hp -= wd.damage * pd.force * Crit();
+				StartCoroutine(Knockback(collider));
 			}
 			else
 			{
 				Miss();
 			}
 		}
+	}
+
+	public IEnumerator Knockback(Collider2D col)
+	{
+		Vector2 direction = (col.transform.position - player.gameObject.transform.position).normalized;
+		col.gameObject.transform.parent.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * knockbackStrength * wd.knockback, ForceMode2D.Impulse);
+		yield return new WaitForSeconds(0.2f);
+		col.gameObject.transform.parent.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 	}
 
 	public int Crit()

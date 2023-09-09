@@ -149,7 +149,5 @@ public class Health : MonoBehaviour
 				hearts[i].SetActive(false);
 			}
 		}
-
-		Debug.Log(pb.maxHealth);
 	}
 }

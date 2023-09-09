@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
 
 	public void CreateNewLevel()
 	{
-		if(levelNumber > 0 && levelNumber < 6)
+		if(levelNumber > -1 && levelNumber < 6)
 		{
 			levelIndexWasWas = levelIndexWas;
 			levelIndexWas = currentLevelIndex;

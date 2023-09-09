@@ -16,10 +16,16 @@ public class Enemy : MonoBehaviour
 	public int hp;
 	public float speed;
 
+	public int touchDamage;
+
 	private GameManager gm;
+
+	public Animator animator;
 
 	public GameObject particle;
 	private ParticleSystem ps;
+
+	public GameObject coin;
 
 	private void Start()
 	{
@@ -33,6 +39,11 @@ public class Enemy : MonoBehaviour
 			hp = currentEd.hp;
 			speed = currentEd.speed;
 		}
+
+		touchDamage = currentEd.touchDamage;
+
+		animator = GetComponent<Animator>();
+		animator.runtimeAnimatorController = currentEd.runtimeAnimatorController;
 	}
 
 	private void Update()
@@ -50,6 +61,13 @@ public class Enemy : MonoBehaviour
 		ps = particle.GetComponent<ParticleSystem>();
 
 		ps.Play();
+
+		int money = Random.Range(currentEd.moneyMin, currentEd.moneyMax);
+
+		for(int i = 0; i < money; i++)
+		{
+			Instantiate(coin, transform.position, Quaternion.identity);
+		}
 
 		Destroy(gameObject);
 	}

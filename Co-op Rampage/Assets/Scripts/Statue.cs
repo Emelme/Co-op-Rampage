@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Statue : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class Statue : MonoBehaviour
 	public bool isWater;
 
 	private Animator an;
+
+	private Light2D li;
+
+	public Color lava;
+	public Color water;
 
 	private void Start()
 	{
@@ -32,5 +38,16 @@ public class Statue : MonoBehaviour
 		an = transform.Find("Bottom").GetComponent<Animator>();
 		an.SetBool("isLava", isLava);
 		an.SetBool("isWater", isWater);
+
+		li = GetComponentInChildren<Light2D>();
+
+		if (isLava)
+		{
+			li.color = lava;
+		}
+		else if (isWater)
+		{
+			li.color = water;
+		}
 	}
 }

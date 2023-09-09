@@ -12,8 +12,6 @@ public class PlayerData : ScriptableObject
 
 	public RuntimeAnimatorController runtimeAnimatorController;
 
-	public int money = 0;
-
 	public int maxInventorySlots = 2;
 
 	public float speed = 8f;
