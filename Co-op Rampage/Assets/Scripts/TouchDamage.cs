@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TouchDamage : MonoBehaviour
@@ -19,22 +20,27 @@ public class TouchDamage : MonoBehaviour
 
 	private void OnTriggerStay2D(Collider2D collision)
 	{
-		if (collision.CompareTag("Player") && !isDamageCoroutineRunning)
+		if (collision.CompareTag("Player") && !isDamageCoroutineRunning && !collision.gameObject.GetComponent<PlayerBehaviour>().isImmortal)
 		{
 			enemyTouchDamage = enemy.touchDamage;
-			StartCoroutine(MakeTouchDamage());
+			StartCoroutine(MakeTouchDamage(collision));
 		}
 	}
 
-	private IEnumerator MakeTouchDamage()
+	private IEnumerator MakeTouchDamage(Collider2D col)
 	{
 		isDamageCoroutineRunning = true;
+		col.gameObject.GetComponent<PlayerBehaviour>().isImmortal = true;
 
 		Health hp = FindAnyObjectByType<Health>();
 		hp.SubHealth(enemyTouchDamage);
 
+		Knockback kb = col.gameObject.GetComponent<Knockback>();
+		kb.ApplyKnockback(transform.position, enemy.currentEd.knockback);
+
 		yield return new WaitForSeconds(1f);
 
 		isDamageCoroutineRunning = false;
+		col.gameObject.GetComponent<PlayerBehaviour>().isImmortal = false;
 	}
 }

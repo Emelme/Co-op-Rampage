@@ -20,4 +20,6 @@ public class EnemyData : ScriptableObject
 	public int moneyMin;
 
 	public int touchDamage;
+
+	public float knockback = 1f;
 }

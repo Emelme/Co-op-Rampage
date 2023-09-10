@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
 
 		ps.Play();
 
-		int money = Random.Range(currentEd.moneyMin, currentEd.moneyMax);
+		int money = Random.Range(currentEd.moneyMin, currentEd.moneyMax + 1);
 
 		for(int i = 0; i < money; i++)
 		{

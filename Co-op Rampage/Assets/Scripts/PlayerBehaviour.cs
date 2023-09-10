@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEditor;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class PlayerBehaviour : MonoBehaviour
 
 	public int maxHealth;
 	public int health;
+
+	public bool isDead;
+
+	public bool isImmortal = false;
 
 	public int money = 0;
 
@@ -28,5 +33,11 @@ public class PlayerBehaviour : MonoBehaviour
 	private void Update()
 	{
 		moneyText.SetText(Convert.ToString(money));
+
+		if(isDead)
+		{
+			EditorApplication.isPlaying = false;
+			Application.Quit();
+		}
 	}
 }

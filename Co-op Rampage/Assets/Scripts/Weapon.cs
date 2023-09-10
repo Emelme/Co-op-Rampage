@@ -74,21 +74,13 @@ public class Weapon : MonoBehaviour
 			if (Random.Range(1, 101) <= pd.accuracy)
 			{
 				enemy.hp -= wd.damage * pd.force * Crit();
-				StartCoroutine(Knockback(collider));
+				collider.gameObject.GetComponent<Knockback>().ApplyKnockback(transform.parent.transform.position, wd.knockback / 2f);
 			}
 			else
 			{
 				Miss();
 			}
 		}
-	}
-
-	public IEnumerator Knockback(Collider2D col)
-	{
-		Vector2 direction = (col.transform.position - player.gameObject.transform.position).normalized;
-		col.gameObject.transform.parent.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * knockbackStrength * wd.knockback, ForceMode2D.Impulse);
-		yield return new WaitForSeconds(0.2f);
-		col.gameObject.transform.parent.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 	}
 
 	public int Crit()

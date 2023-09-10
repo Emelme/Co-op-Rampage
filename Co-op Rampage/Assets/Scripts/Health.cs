@@ -14,8 +14,6 @@ public class Health : MonoBehaviour
 	public GameObject[] hearts = new GameObject[10];
 	private Image[] images = new Image[10];
 
-	public bool isDead = false;
-
 	private void Start()
 	{
 		pb = FindAnyObjectByType<PlayerBehaviour>();
@@ -77,7 +75,7 @@ public class Health : MonoBehaviour
 	{
 		if (pb.health - value < 1)
 		{
-			isDead = true;
+			pb.isDead = true;
 		}
 
 		pb.health -= value;
