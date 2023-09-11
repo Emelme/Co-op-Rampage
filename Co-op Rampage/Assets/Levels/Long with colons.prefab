@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2546903584752740071}
   - component: {fileID: 333224690147256755}
   - component: {fileID: 7899666736443763283}
+  - component: {fileID: -51687176278895756}
   m_Layer: 0
   m_Name: Long with colons
   m_TagString: Untagged
@@ -88,6 +89,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {x: -12, y: -1, z: 0}
   end: {x: -8, y: -1, z: 0}
+--- !u!114 &-51687176278895756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160712808708474691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08b2bcf0eb1e424387031628abe4281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start:
+  - {x: 6, y: -1}
+  - {x: 6, y: 0}
+  - {x: 9, y: 0}
+  end:
+  - {x: 10, y: -1}
+  - {x: 7, y: 0}
+  - {x: 10, y: 0}
+  allPosition: []
+  enemy1:
+  - {fileID: 2125792464330552659, guid: 1fa68bc82c833c847b3306fd73280784, type: 3}
+  enemy2: []
+  enemy3: []
+  enemy4: []
+  enemy5: []
+  enemyAmount: 0
 --- !u!1 &272007767270000837
 GameObject:
   m_ObjectHideFlags: 0

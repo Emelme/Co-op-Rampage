@@ -32,34 +32,6 @@ public class Health : MonoBehaviour
 		ResetHearts();
 	}
 
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Z))
-		{
-			AddHealth(3);
-		}
-
-		if (Input.GetKeyDown(KeyCode.X))
-		{
-			SubHealth(3);
-		}
-
-		if (Input.GetKeyDown(KeyCode.N))
-		{
-			AddMaxHealth(10);
-		}
-
-		if (Input.GetKeyDown(KeyCode.M))
-		{
-			SubMaxHealth(10);
-		}
-
-		if(Input.GetKeyDown(KeyCode.B))
-		{
-			NewMaxHealth();
-		}
-	}
-
 	public void AddHealth(int value)
 	{
 		if (pb.health + value > pb.maxHealth)
@@ -119,7 +91,11 @@ public class Health : MonoBehaviour
 
 		for (int i = 0; i < images.Length; i++)
 		{
-			if (i < fullHearts)
+			if (pb.health < 10 && i == 0)
+			{
+				images[0].sprite = halfHeart;
+			}
+			else if (i < fullHearts)
 			{
 				images[i].sprite = fullHeart;
 			}

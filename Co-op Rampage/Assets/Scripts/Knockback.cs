@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Knockback : MonoBehaviour
 {
+	private CinemachineShake cs;
+
 	public float knockbackForce = 30f;
 	public float knockbackDuration = 0.2f;
 
@@ -12,6 +14,8 @@ public class Knockback : MonoBehaviour
 
 	private void Start()
 	{
+		cs = FindAnyObjectByType<CinemachineShake>();
+
 		rb = GetComponent<Rigidbody2D>();
 	}
 
@@ -22,6 +26,8 @@ public class Knockback : MonoBehaviour
 		rb.velocity = Vector2.zero;
 
 		rb.AddForce(direction.normalized * knockbackForce * multiplier, ForceMode2D.Impulse);
+
+		cs.ShakeCamera(2f, 0.25f);
 
 		knockbackTimer = knockbackDuration;
 	}

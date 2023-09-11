@@ -18,5 +18,5 @@ MonoBehaviour:
   speed: 4
   moneyMax: 2
   moneyMin: 0
-  touchDamage: 10
+  touchDamage: 3
   knockback: 1

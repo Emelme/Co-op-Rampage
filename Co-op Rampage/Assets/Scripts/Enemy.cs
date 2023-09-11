@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-	public EnemyData[] ed1;
-	public EnemyData[] ed2;
-	public EnemyData[] ed3;
-	public EnemyData[] ed4;
-	public EnemyData[] ed5;
+	public EnemySpawner es;
 
-	public int currentIndex = -1;
 	public EnemyData currentEd;
 
 	public int hp;
@@ -31,14 +26,10 @@ public class Enemy : MonoBehaviour
 	{
 		gm = FindAnyObjectByType<GameManager>();
 
-		if (gm.levelNumber < 6)
-		{
-			currentIndex = Random.Range(0, ed1.Length);
-			currentEd = ed1[currentIndex];
+		es = FindAnyObjectByType<EnemySpawner>();
 
-			hp = currentEd.hp;
-			speed = currentEd.speed;
-		}
+		hp = currentEd.hp;
+		speed = currentEd.speed;
 
 		touchDamage = currentEd.touchDamage;
 
@@ -68,6 +59,8 @@ public class Enemy : MonoBehaviour
 		{
 			Instantiate(coin, transform.position, Quaternion.identity);
 		}
+
+		es.enemyDead();
 
 		Destroy(gameObject);
 	}

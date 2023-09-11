@@ -52,6 +52,8 @@ MonoBehaviour:
   - {fileID: -1776931982, guid: f0deb9bbd8c9dc8499b39ba089976df3, type: 3}
   isLava: 1
   isWater: 0
+  lava: {r: 0, g: 0, b: 0, a: 0}
+  water: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &589283504416586913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,6 +1730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a700601ae9e56f4fa4948fc42ef087c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: {x: 0, y: 0}
+  end: {x: 0, y: 0}
   tiles:
   - {fileID: 11400000, guid: e1cbb2f44b5c24142a20282f8fbdf3dc, type: 2}
   - {fileID: 11400000, guid: b71e54af86e16d7469617182d8ce88cf, type: 2}
@@ -1953,6 +1957,7 @@ GameObject:
   - component: {fileID: 8239601587932129620}
   - component: {fileID: 964571873860863844}
   - component: {fileID: 2068746329743206248}
+  - component: {fileID: -27176487398305559}
   m_Layer: 0
   m_Name: Medium Round
   m_TagString: Untagged
@@ -2024,6 +2029,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 282eab85b1c70a44ca0a0611c4cec41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: {x: 0, y: 0, z: 0}
+  end: {x: 0, y: 0, z: 0}
+--- !u!114 &-27176487398305559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027084848688652181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08b2bcf0eb1e424387031628abe4281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3039399155960792374
@@ -2487,6 +2506,8 @@ MonoBehaviour:
   - {fileID: -1776931982, guid: f0deb9bbd8c9dc8499b39ba089976df3, type: 3}
   isLava: 1
   isWater: 0
+  lava: {r: 0, g: 0, b: 0, a: 0}
+  water: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5312756436878013218
 GameObject:
   m_ObjectHideFlags: 0
