@@ -112,6 +112,7 @@ MonoBehaviour:
   allPosition: []
   enemy1:
   - {fileID: 2125792464330552659, guid: 1fa68bc82c833c847b3306fd73280784, type: 3}
+  - {fileID: 2125792464330552659, guid: 1fa68bc82c833c847b3306fd73280784, type: 3}
   enemy2: []
   enemy3: []
   enemy4: []
@@ -5173,8 +5174,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a700601ae9e56f4fa4948fc42ef087c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start: {x: -13, y: -1}
-  end: {x: 11, y: -1}
+  start:
+  - {x: 808935730, y: 825243184}
+  - {x: 1698260321, y: 879113781}
+  end:
+  - {x: 808935730, y: 825243184}
+  - {x: 1698260321, y: 879113781}
   tiles:
   - {fileID: 11400000, guid: e1cbb2f44b5c24142a20282f8fbdf3dc, type: 2}
   - {fileID: 11400000, guid: b71e54af86e16d7469617182d8ce88cf, type: 2}

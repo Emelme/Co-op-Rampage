@@ -10,19 +10,13 @@ public class EnemySpawner : MonoBehaviour
 
 	public List<Vector2Int> allPosition;
 
-	public GameObject[] enemy1;
-	public GameObject[] enemy2;
-	public GameObject[] enemy3;
-	public GameObject[] enemy4;
-	public GameObject[] enemy5;
-
 	public int enemyAmount = 0;
 
-	private GameManager gameManager;
+	private GameManager gm;
 
 	private void Start()
 	{
-		gameManager = FindAnyObjectByType<GameManager>();
+		gm = FindAnyObjectByType<GameManager>();
 
 		for (int i = 0; i < start.Length; i++)
 		{
@@ -35,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
 			}
 		}
 
-		SpawnEnemys(allPosition, gameManager.levelNumber);
+		SpawnEnemys(allPosition, gm.levelNumber);
 	}
 
 	public void SpawnEnemys(List<Vector2Int> list, int levelNumber)
@@ -46,10 +40,10 @@ public class EnemySpawner : MonoBehaviour
 
 			for (int i = 0; i <= enemyAmount; i++)
 			{
-				int index = Random.Range(0, allPosition.Count);
-				Vector2Int position = allPosition[index];
-				Instantiate(enemy1[Random.Range(0, enemy1.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), Quaternion.identity);
-				allPosition.RemoveAt(index);
+				int index = Random.Range(0, list.Count);
+				Vector2Int position = list[index];
+				Instantiate(gm.enemy1[Random.Range(0, gm.enemy1.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), transform.rotation);
+				list.RemoveAt(index);
 			}
 		}
 		else if (levelNumber >= 7 && levelNumber <= 11)
@@ -58,10 +52,10 @@ public class EnemySpawner : MonoBehaviour
 
 			for (int i = 0; i <= enemyAmount; i++)
 			{
-				int index = Random.Range(0, allPosition.Count);
-				Vector2Int position = allPosition[index];
-				Instantiate(enemy2[Random.Range(0, enemy2.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), Quaternion.identity);
-				allPosition.RemoveAt(index);
+				int index = Random.Range(0, list.Count);
+				Vector2Int position = list[index];
+				Instantiate(gm.enemy2[Random.Range(0, gm.enemy2.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), Quaternion.identity);
+				list.RemoveAt(index);
 			}
 		}
 		else if (levelNumber >= 13 && levelNumber <= 17)
@@ -70,10 +64,10 @@ public class EnemySpawner : MonoBehaviour
 
 			for (int i = 0; i <= enemyAmount; i++)
 			{
-				int index = Random.Range(0, allPosition.Count);
-				Vector2Int position = allPosition[index];
-				Instantiate(enemy3[Random.Range(0, enemy3.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), Quaternion.identity);
-				allPosition.RemoveAt(index);
+				int index = Random.Range(0, list.Count);
+				Vector2Int position = list[index];
+				Instantiate(gm.enemy3[Random.Range(0, gm.enemy3.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), Quaternion.identity);
+				list.RemoveAt(index);
 			}
 		}
 		else if (levelNumber >= 19 && levelNumber <= 23)
@@ -82,10 +76,10 @@ public class EnemySpawner : MonoBehaviour
 
 			for (int i = 0; i <= enemyAmount; i++)
 			{
-				int index = Random.Range(0, allPosition.Count);
-				Vector2Int position = allPosition[index];
-				Instantiate(enemy4[Random.Range(0, enemy4.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), Quaternion.identity);
-				allPosition.RemoveAt(index);
+				int index = Random.Range(0, list.Count);
+				Vector2Int position = list[index];
+				Instantiate(gm.enemy4[Random.Range(0, gm.enemy4.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), Quaternion.identity);
+				list.RemoveAt(index);
 			}
 		}
 		else if (levelNumber >= 25 && levelNumber <= 29)
@@ -94,10 +88,10 @@ public class EnemySpawner : MonoBehaviour
 
 			for (int i = 0; i <= enemyAmount; i++)
 			{
-				int index = Random.Range(0, allPosition.Count);
-				Vector2Int position = allPosition[index];
-				Instantiate(enemy5[Random.Range(0, enemy5.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), Quaternion.identity);
-				allPosition.RemoveAt(index);
+				int index = Random.Range(0, list.Count);
+				Vector2Int position = list[index];
+				Instantiate(gm.enemy5[Random.Range(0, gm.enemy5.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), Quaternion.identity);
+				list.RemoveAt(index);
 			}
 		}
 	}
@@ -106,7 +100,7 @@ public class EnemySpawner : MonoBehaviour
 	{
 		enemyAmount--;
 
-		if (enemyAmount == 0)
+		if (enemyAmount <= 0)
 		{
 			RandomHolleSpawn rhs = GetComponentInChildren<RandomHolleSpawn>();
 			rhs.CreateHolle();

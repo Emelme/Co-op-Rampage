@@ -22,6 +22,9 @@ public class Enemy : MonoBehaviour
 
 	public GameObject coin;
 
+	public GameObject medSlime;
+	public GameObject smallSlime;
+
 	private void Start()
 	{
 		gm = FindAnyObjectByType<GameManager>();
@@ -43,8 +46,11 @@ public class Enemy : MonoBehaviour
 		{
 			Dead();
 		}
-	}
 
+		transform.position = new(transform.position.x, transform.position.y, 0f);
+		transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+	}
+	
 	public void Dead()
 	{
 		particle = Instantiate(particle, transform.position, Quaternion.identity);
@@ -58,6 +64,21 @@ public class Enemy : MonoBehaviour
 		for(int i = 0; i < money; i++)
 		{
 			Instantiate(coin, transform.position, Quaternion.identity);
+		}
+
+		if (currentEd.enemyType == EnemyData.EnemyType.BigBrownSlime)
+		{
+			es.enemyAmount += 2;
+
+			Instantiate(medSlime, new(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
+			Instantiate(medSlime, new(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
+		}
+		else if (currentEd.enemyType == EnemyData.EnemyType.MediumBrownSlime)
+		{
+			es.enemyAmount += 2;
+
+			Instantiate(smallSlime, new(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
+			Instantiate(smallSlime, new(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
 		}
 
 		es.enemyDead();

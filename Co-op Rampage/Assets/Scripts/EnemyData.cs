@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class EnemyData : ScriptableObject
 {
-	public enum EnemyType { GreenSlime,  }
+	public enum EnemyType { SmallBrownSlime, MediumBrownSlime, BigBrownSlime, SmallDemon,  }
 
 	public EnemyType enemyType;
 

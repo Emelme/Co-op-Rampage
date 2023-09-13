@@ -7,8 +7,8 @@ public class RandomHolleSpawn : MonoBehaviour
 {
 	private Grid grid;
 
-	public Vector2Int start;
-	public Vector2Int end;
+	public Vector2Int[] start;
+	public Vector2Int[] end;
 
 	private Tilemap tilemap;
 	public Tile[] tiles = new Tile[2];
@@ -24,11 +24,14 @@ public class RandomHolleSpawn : MonoBehaviour
 
 		tilemap = GetComponent<Tilemap>();
 
-		for (int x = start.x; x <= end.x; x++)
+		for (int i = 0; i < start.Length; i++)
 		{
-			for (int y = start.y; y >= end.y; y--)
+			for (int x = start[i].x; x <= end[i].x; x++)
 			{
-				allTiles.Add(new Vector3Int(x, y, 0));
+				for (int y = start[i].y; y >= end[i].y; y--)
+				{
+					allTiles.Add(new Vector3Int(x, y));
+				}
 			}
 		}
 	}

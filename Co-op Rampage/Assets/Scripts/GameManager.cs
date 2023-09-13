@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour
 
 	public GameObject[] boss;
 
+	public GameObject[] enemy1;
+	public GameObject[] enemy2;
+	public GameObject[] enemy3;
+	public GameObject[] enemy4;
+	public GameObject[] enemy5;
 
 	public GameObject currentLevel;
 
@@ -133,11 +138,15 @@ public class GameManager : MonoBehaviour
 	private GameObject InstantiateRandom(GameObject[] levelArray)
 	{
 		int randomIndex = Random.Range(0, levelArray.Length);
+
 		while (randomIndex == levelIndexWas || randomIndex == levelIndexWasWas)
 		{
 			randomIndex = Random.Range(0, levelArray.Length);
 		}
-		return Instantiate(levelArray[randomIndex]);
+
+		currentLevelIndex = randomIndex;
+
+		return Instantiate(levelArray[currentLevelIndex]);
 	}
 
 	public void RestartLevel()
