@@ -33,8 +33,6 @@ public class GameManager : MonoBehaviour
 
 	public int levelNumber = 0;
 
-	private RandomHolleSpawn rhs;
-
 	public enum CharachterType
 	{
 		knight,

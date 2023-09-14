@@ -40,4 +40,18 @@ public class PlayerBehaviour : MonoBehaviour
 			Application.Quit();
 		}
 	}
+
+	public void StartImmortalReloading(float time)
+	{
+		StartCoroutine(ImmortalReloading(time));
+	}
+
+	public IEnumerator ImmortalReloading(float time)
+	{
+		isImmortal = true;
+
+		yield return new WaitForSeconds(time);
+
+		isImmortal = false;
+	}
 }

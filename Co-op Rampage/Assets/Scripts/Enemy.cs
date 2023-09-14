@@ -13,8 +13,6 @@ public class Enemy : MonoBehaviour
 
 	public int touchDamage;
 
-	private GameManager gm;
-
 	public Animator animator;
 
 	public GameObject particle;
@@ -27,8 +25,6 @@ public class Enemy : MonoBehaviour
 
 	private void Start()
 	{
-		gm = FindAnyObjectByType<GameManager>();
-
 		es = FindAnyObjectByType<EnemySpawner>();
 
 		hp = currentEd.hp;
@@ -47,8 +43,7 @@ public class Enemy : MonoBehaviour
 			Dead();
 		}
 
-		transform.position = new(transform.position.x, transform.position.y, 0f);
-		transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+		transform.SetPositionAndRotation(new(transform.position.x, transform.position.y, 0f), Quaternion.Euler(0f, 0f, 0f));
 	}
 	
 	public void Dead()
@@ -81,7 +76,7 @@ public class Enemy : MonoBehaviour
 			Instantiate(smallSlime, new(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
 		}
 
-		es.enemyDead();
+		es.EnemyDead();
 
 		Destroy(gameObject);
 	}

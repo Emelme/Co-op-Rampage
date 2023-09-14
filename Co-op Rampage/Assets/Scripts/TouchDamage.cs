@@ -22,15 +22,15 @@ public class TouchDamage : MonoBehaviour
 	{
 		if (collision.CompareTag("Player") && !isDamageCoroutineRunning && !collision.gameObject.GetComponent<PlayerBehaviour>().isImmortal)
 		{
-			enemyTouchDamage = enemy.touchDamage;
 			StartCoroutine(MakeTouchDamage(collision));
 		}
 	}
 
 	private IEnumerator MakeTouchDamage(Collider2D col)
 	{
+		enemyTouchDamage = enemy.touchDamage;
 		isDamageCoroutineRunning = true;
-		col.gameObject.GetComponent<PlayerBehaviour>().isImmortal = true;
+		col.gameObject.GetComponent<PlayerBehaviour>().StartImmortalReloading(1f);
 
 		Health hp = FindAnyObjectByType<Health>();
 		hp.SubHealth(enemyTouchDamage);
@@ -41,6 +41,5 @@ public class TouchDamage : MonoBehaviour
 		yield return new WaitForSeconds(1f);
 
 		isDamageCoroutineRunning = false;
-		col.gameObject.GetComponent<PlayerBehaviour>().isImmortal = false;
 	}
 }

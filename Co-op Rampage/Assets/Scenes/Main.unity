@@ -637,7 +637,11 @@ MonoBehaviour:
   shop3: []
   shop4: []
   boss: []
-  enemy1: []
+  enemy1:
+  - {fileID: 8506056301886229158, guid: 03fdb062f7b9b4d42b0637d050355e56, type: 3}
+  - {fileID: 495216030667326244, guid: 6a872499e05bfb54980c0538ecce6149, type: 3}
+  - {fileID: 2125792464330552659, guid: 0cbbe3953553e1045ad414457c1d4fe2, type: 3}
+  - {fileID: 8960354963372594636, guid: e6f708e82090b9744bdf6f831b61b05d, type: 3}
   enemy2: []
   enemy3: []
   enemy4: []

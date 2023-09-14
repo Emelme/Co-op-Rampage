@@ -1531,11 +1531,6 @@ MonoBehaviour:
   - {x: 10, y: -2}
   - {x: -4, y: -2}
   allPosition: []
-  enemy1: []
-  enemy2: []
-  enemy3: []
-  enemy4: []
-  enemy5: []
   enemyAmount: 0
 --- !u!1 &2623468551957000466
 GameObject:

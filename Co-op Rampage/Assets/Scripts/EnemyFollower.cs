@@ -13,7 +13,7 @@ public class EnemyFollower : MonoBehaviour
 	public bool isPlayerDetected = false;
 
 	private float timer;
-	private float timerMax = 2f;
+	private readonly float timerMax = 2f;
 
 	public float distance;
 

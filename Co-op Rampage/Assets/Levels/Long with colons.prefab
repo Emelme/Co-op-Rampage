@@ -110,13 +110,6 @@ MonoBehaviour:
   - {x: 7, y: 0}
   - {x: 10, y: 0}
   allPosition: []
-  enemy1:
-  - {fileID: 2125792464330552659, guid: 1fa68bc82c833c847b3306fd73280784, type: 3}
-  - {fileID: 2125792464330552659, guid: 1fa68bc82c833c847b3306fd73280784, type: 3}
-  enemy2: []
-  enemy3: []
-  enemy4: []
-  enemy5: []
   enemyAmount: 0
 --- !u!1 &272007767270000837
 GameObject:
@@ -5175,11 +5168,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start:
-  - {x: 808935730, y: 825243184}
-  - {x: 1698260321, y: 879113781}
+  - {x: -12, y: -1}
   end:
-  - {x: 808935730, y: 825243184}
-  - {x: 1698260321, y: 879113781}
+  - {x: 10, y: -1}
   tiles:
   - {fileID: 11400000, guid: e1cbb2f44b5c24142a20282f8fbdf3dc, type: 2}
   - {fileID: 11400000, guid: b71e54af86e16d7469617182d8ce88cf, type: 2}

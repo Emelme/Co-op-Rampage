@@ -61540,11 +61540,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start:
-  - {x: 808935730, y: 825243184}
-  - {x: 1698260321, y: 879113781}
+  - {x: 3, y: 5}
+  - {x: 1, y: 3}
   end:
-  - {x: 808935730, y: 825243184}
-  - {x: 1698260321, y: 879113781}
+  - {x: 5, y: 4}
+  - {x: 3, y: 2}
   tiles:
   - {fileID: 11400000, guid: e1cbb2f44b5c24142a20282f8fbdf3dc, type: 2}
   - {fileID: 11400000, guid: b71e54af86e16d7469617182d8ce88cf, type: 2}
@@ -61657,9 +61657,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start:
-  - {x: -1, y: 1}
+  - {x: 4, y: 6}
+  - {x: 2, y: 4}
+  - {x: 0, y: 2}
   end:
-  - {x: 1, y: -1}
+  - {x: 6, y: 4}
+  - {x: 4, y: 2}
+  - {x: 2, y: 0}
   allPosition: []
   enemyAmount: 0
 --- !u!1 &6391357999723815702

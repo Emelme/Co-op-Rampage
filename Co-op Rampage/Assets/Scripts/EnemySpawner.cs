@@ -36,67 +36,72 @@ public class EnemySpawner : MonoBehaviour
 	{
 		if (levelNumber >= 1 && levelNumber <= 5)
 		{
-			enemyAmount = Random.Range(1, 5);
+			int enemyAmountInMethod = Random.Range(1, 5);
 
-			for (int i = 0; i <= enemyAmount; i++)
+			for (int i = 0; i <= enemyAmountInMethod; i++)
 			{
 				int index = Random.Range(0, list.Count);
 				Vector2Int position = list[index];
 				Instantiate(gm.enemy1[Random.Range(0, gm.enemy1.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), transform.rotation);
+				enemyAmount++;
 				list.RemoveAt(index);
 			}
 		}
 		else if (levelNumber >= 7 && levelNumber <= 11)
 		{
-			enemyAmount = Random.Range(2, 7);
+			int enemyAmountInMethod = Random.Range(2, 7);
 
-			for (int i = 0; i <= enemyAmount; i++)
+			for (int i = 0; i <= enemyAmountInMethod; i++)
 			{
 				int index = Random.Range(0, list.Count);
 				Vector2Int position = list[index];
 				Instantiate(gm.enemy2[Random.Range(0, gm.enemy2.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), Quaternion.identity);
+				enemyAmount++;
 				list.RemoveAt(index);
 			}
 		}
 		else if (levelNumber >= 13 && levelNumber <= 17)
 		{
-			enemyAmount = Random.Range(4, 9);
+			int enemyAmountInMethod = Random.Range(4, 9);
 
-			for (int i = 0; i <= enemyAmount; i++)
+			for (int i = 0; i <= enemyAmountInMethod; i++)
 			{
 				int index = Random.Range(0, list.Count);
 				Vector2Int position = list[index];
 				Instantiate(gm.enemy3[Random.Range(0, gm.enemy3.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), Quaternion.identity);
+				enemyAmount++;
 				list.RemoveAt(index);
 			}
 		}
 		else if (levelNumber >= 19 && levelNumber <= 23)
 		{
-			enemyAmount = Random.Range(6, 11);
+			int enemyAmountInMethod = Random.Range(6, 11);
 
-			for (int i = 0; i <= enemyAmount; i++)
+			for (int i = 0; i <= enemyAmountInMethod; i++)
 			{
 				int index = Random.Range(0, list.Count);
 				Vector2Int position = list[index];
 				Instantiate(gm.enemy4[Random.Range(0, gm.enemy4.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), Quaternion.identity);
+				enemyAmount++;
 				list.RemoveAt(index);
 			}
 		}
 		else if (levelNumber >= 25 && levelNumber <= 29)
 		{
-			enemyAmount = Random.Range(8, 13);
+			int enemyAmountInMethod = Random.Range(8, 13);
 
-			for (int i = 0; i <= enemyAmount; i++)
+			for (int i = 0; i <= enemyAmountInMethod; i++)
 			{
 				int index = Random.Range(0, list.Count);
 				Vector2Int position = list[index];
 				Instantiate(gm.enemy5[Random.Range(0, gm.enemy5.Length)], new Vector3(position.x + 0.5f, position.y + 0.5f, 0f), Quaternion.identity);
+				enemyAmount++;
 				list.RemoveAt(index);
 			}
 		}
 	}
 
-	public void enemyDead()
+	public void EnemyDead()
 	{
 		enemyAmount--;
 
