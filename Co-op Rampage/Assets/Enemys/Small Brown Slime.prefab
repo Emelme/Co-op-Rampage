@@ -104,7 +104,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.2}
+  m_Size: {x: 0.7, y: 0.84}
   m_EdgeRadius: 0
 --- !u!114 &4290601591133759249
 MonoBehaviour:
@@ -387,6 +387,7 @@ MonoBehaviour:
   coin: {fileID: 6325592536084547713, guid: 565da7f32e01bbb4c94ce17f83c8f0a3, type: 3}
   medSlime: {fileID: 495216030667326244, guid: 6a872499e05bfb54980c0538ecce6149, type: 3}
   smallSlime: {fileID: 2125792464330552659}
+  particleSpawn: {fileID: 0}
 --- !u!61 &2031628116497337410
 BoxCollider2D:
   m_ObjectHideFlags: 0

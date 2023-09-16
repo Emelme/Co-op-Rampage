@@ -23,6 +23,9 @@ public class Enemy : MonoBehaviour
 	public GameObject medSlime;
 	public GameObject smallSlime;
 
+	public GameObject particleSpawn;
+	private ParticleSystem psSpawn;
+
 	private void Start()
 	{
 		es = FindAnyObjectByType<EnemySpawner>();
@@ -65,15 +68,29 @@ public class Enemy : MonoBehaviour
 		{
 			es.enemyAmount += 2;
 
-			Instantiate(medSlime, new(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
-			Instantiate(medSlime, new(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
+			GameObject gameObjectSlime = Instantiate(medSlime, new(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
+			GameObject particleSpawnObject = Instantiate(particleSpawn, gameObjectSlime.transform.position, Quaternion.identity);
+			psSpawn = particleSpawnObject.GetComponent<ParticleSystem>();
+			psSpawn.Play();
+
+			gameObjectSlime = Instantiate(medSlime, new(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
+			particleSpawnObject = Instantiate(particleSpawn, gameObjectSlime.transform.position, Quaternion.identity);
+			psSpawn = particleSpawnObject.GetComponent<ParticleSystem>();
+			psSpawn.Play();
 		}
 		else if (currentEd.enemyType == EnemyData.EnemyType.MediumBrownSlime)
 		{
 			es.enemyAmount += 2;
 
-			Instantiate(smallSlime, new(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
-			Instantiate(smallSlime, new(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
+			GameObject gameObjectSlime = Instantiate(smallSlime, new(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
+			GameObject particleSpawnObject = Instantiate(particleSpawn, gameObjectSlime.transform.position, Quaternion.identity);
+			psSpawn = particleSpawnObject.GetComponent<ParticleSystem>();
+			psSpawn.Play();
+
+			gameObjectSlime = Instantiate(smallSlime, new(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
+			particleSpawnObject = Instantiate(particleSpawn, gameObjectSlime.transform.position, Quaternion.identity);
+			psSpawn = particleSpawnObject.GetComponent<ParticleSystem>();
+			psSpawn.Play();
 		}
 
 		es.EnemyDead();

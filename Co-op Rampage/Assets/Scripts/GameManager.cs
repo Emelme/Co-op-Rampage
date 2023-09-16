@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -33,6 +34,8 @@ public class GameManager : MonoBehaviour
 
 	public int levelNumber = 0;
 
+	private PlayerMovement playerMovement;
+
 	public enum CharachterType
 	{
 		knight,
@@ -49,6 +52,8 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
 	{
+		playerMovement = FindAnyObjectByType<PlayerMovement>();
+
 		CreateNewLevel();
 	}
 

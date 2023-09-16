@@ -1695,6 +1695,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e1cbb2f44b5c24142a20282f8fbdf3dc, type: 2}
   - {fileID: 11400000, guid: b71e54af86e16d7469617182d8ce88cf, type: 2}
   allTiles: []
+  particle: {fileID: 4259177027373678131, guid: adbb933fac38a784fb031aa5d4fb35a5, type: 3}
   triggerObject: {fileID: 0}
   bc: {fileID: 0}
 --- !u!114 &8982502071964014249

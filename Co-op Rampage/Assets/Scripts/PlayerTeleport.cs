@@ -10,6 +10,8 @@ public class PlayerTeleport : MonoBehaviour
 	public Vector3Int start;
 	public Vector3Int end;
 
+	private PlayerMovement playerMovement;
+
 	private void Start()
 	{
 		grid = GetComponent<Grid>();
@@ -25,5 +27,8 @@ public class PlayerTeleport : MonoBehaviour
 		newPos += new Vector2(0.5f, 0.5f);
 
 		player.transform.position = newPos;
+
+		player.GetComponent<PlayerMovement>().FreezeMovement();
+
 	}
 }

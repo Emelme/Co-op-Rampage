@@ -15,6 +15,9 @@ public class RandomHolleSpawn : MonoBehaviour
 
 	public List<Vector3Int> allTiles;
 
+	public GameObject particle;
+	private ParticleSystem ps;
+
 	public GameObject triggerObject;
 	public BoxCollider2D bc;
 
@@ -35,8 +38,10 @@ public class RandomHolleSpawn : MonoBehaviour
 			}
 		}
 	}
-	public void CreateHolle()
+	public IEnumerator CreateHolle()
 	{
+		yield return new WaitForSeconds(2f);
+
 		Vector3Int position = allTiles[Random.Range(0, allTiles.Count)];
 
 		tilemap.SetTile(position, tiles[Random.Range(0, tiles.Length)]);
@@ -54,6 +59,12 @@ public class RandomHolleSpawn : MonoBehaviour
 		Vector2 newPos = grid.CellToWorld(position);
 		newPos += new Vector2(0.5f, 0.5f);
 		triggerObject.transform.position = newPos;
+
+		particle = Instantiate(particle, newPos, Quaternion.identity);
+
+		ps = particle.GetComponent<ParticleSystem>();
+
+		ps.Play();
 
 		triggerObject.AddComponent<Holle>();
 	}
